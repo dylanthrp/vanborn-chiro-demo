@@ -432,10 +432,7 @@ section.process .lede {
   border-color: rgba(255, 255, 255, 0.85);
   font-style: italic;
 }
-@media (max-width: 540px) {
-  .topnav { padding: 12px 0; }
-  .tn-tab { font-size: 16px; padding: 10px 12px; min-width: 0; }
-}
+/* (mobile topnav is overridden inside the @media (max-width: 539px) audit block below) */
 
 /* ===========================================================
    Doctors grid — two-card layout
@@ -1005,9 +1002,29 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
   .hours-link { order: 3; flex-basis: 100%; }
   .doc-card { grid-template-columns: 1fr; }
   .doc-card img { width: 100%; height: 280px; object-fit: contain; background: var(--c-cream-2); }
-  .topnav .wrap { display: grid; grid-template-columns: 1fr 1fr; }
-  .tn-tab { max-width: none; }
-  .hero .meta strong { font-size: 20px; }
+  /* Mobile topnav: slim, single-row, compact pills, no text wrap, scrollable when crowded */
+  .topnav { padding: 8px 0; }
+  .topnav .wrap {
+    display: flex;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 0 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .topnav .wrap::-webkit-scrollbar { display: none; }
+  .topnav .wrap > a[data-nav] {
+    flex: 0 0 auto;
+    padding: 7px 12px;
+    font-size: 12px;
+    letter-spacing: .02em;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 999px;
+  }
+  .doc-card { grid-template-columns: 1fr; }
   .lib-grid { grid-template-columns: 1fr 1fr; }
   .lib-card { padding: 18px 10px; }
   .btn { padding: 14px 18px; }
