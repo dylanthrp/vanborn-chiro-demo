@@ -1002,11 +1002,19 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
   .hours-link { order: 3; flex-basis: 100%; }
   .doc-card { grid-template-columns: 1fr; }
   .doc-card img { width: 100%; height: 280px; object-fit: contain; background: var(--c-cream-2); }
-  /* Mobile topnav: slim, single-row, compact pills, no text wrap, scrollable when crowded */
-  .topnav { padding: 8px 0; }
-  .topnav .wrap {
+  /* Mobile topnav: slim, single-row, compact pills, no text wrap, scrollable when crowded.
+     Two selector chains so this wins whether topnav is inside header.top (12 pages)
+     or directly under body (index.html). Specificity (0,3,2) beats the legacy
+     'header.top .wrap' rule (0,2,1) on the nested pages. */
+  header.top nav.topnav,
+  nav.topnav { padding: 8px 0; }
+  header.top nav.topnav > .wrap,
+  nav.topnav > .wrap {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: flex-start;
+    align-items: center;
     gap: 6px;
     padding: 0 12px;
     overflow-x: auto;
@@ -1014,15 +1022,26 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
   }
-  .topnav .wrap::-webkit-scrollbar { display: none; }
-  .topnav .wrap > a[data-nav] {
+  header.top nav.topnav > .wrap::-webkit-scrollbar,
+  nav.topnav > .wrap::-webkit-scrollbar { display: none; }
+  header.top nav.topnav > .wrap > a[data-nav],
+  nav.topnav > .wrap > a[data-nav] {
     flex: 0 0 auto;
+    display: inline-block;
     padding: 7px 12px;
     font-size: 12px;
     letter-spacing: .02em;
     white-space: nowrap;
     text-align: center;
     border-radius: 999px;
+  }
+  /* Mobile active-state override: keep pills slim on the page that matches body[data-page] */
+  body[data-page] header.top nav.topnav > .wrap > a[data-nav],
+  body[data-page] nav.topnav > .wrap > a[data-nav] {
+    flex: 0 0 auto;
+    display: inline-block;
+    padding: 7px 12px;
+    font-size: 12px;
   }
   .doc-card { grid-template-columns: 1fr; }
   .lib-grid { grid-template-columns: 1fr 1fr; }
