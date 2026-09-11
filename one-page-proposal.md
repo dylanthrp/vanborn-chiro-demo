@@ -57,7 +57,7 @@ The setup price is below my normal launch number because this would be my first 
 
 **What I do after you say yes:**
 
-1. We do a 30-min walkthrough to align on copy and any photos you want swapped
+1. We do one more 30-minute walkthrough to verify the site matches your preferences
 2. I register `vanbornchiro.com` (or transfer your existing one) into your name
 3. I set up Cloudflare DNS to point your domain at the new site (about 10 minutes)
 4. I push the live version to your real domain — same look, your real URL
@@ -85,6 +85,43 @@ I'm a mechanical engineering student at UM-Dearborn, not a web-design firm. I wo
 - I'll write every line of HTML, CSS, and JavaScript myself — no AI-generated filler, no copy-and-pasted templates
 - I'll hand off everything at the end: a private GitHub repository in your name, every asset, every account credential
 - You own the work outright the moment I send the final invoice
+
+---
+
+## Security, privacy, and ownership — what I would (and would never) do
+
+You'd hear "data privacy" in any vendor pitch. Here's the actual list, in plain English, that I can back up:
+
+**What I never do**
+
+- I never collect patient information through this site. There is no form that asks for a name, birth date, insurance, ID, address, or health history. The "Speak with the clinic" and "Appointment information" sections all link back to your published phone number — the human-to-human channel you already run.
+- I never upload patient forms to a server. The "Patient forms →" links open PDFs from your existing website. Nothing is copied, nothing is logged, no one in the middle sees the traffic.
+- I never use patient testimonials in a way that wasn't already published by the clinic on the existing site, in the same context, with names and details you already approved.
+- I never change your hours, address, phone, doctor names, or service descriptions without you telling me to in writing (text or email counts).
+- I never sell, rent, share, or hand over anything — phone numbers from a contact form, traffic logs, anything — to a third party. There are no third-party trackers, no Google Analytics, no ad pixels, no Facebook pixel, no chat widgets, no AI tools reading content on the page.
+
+**What I do**
+
+- The site uses **HTTPS only** (a free certificate from Let's Encrypt, managed through Cloudflare). Every page is encrypted in transit. Browsers show the padlock.
+- The site is hosted on a Cloudflare account I create in your name. Cloudflare's edge blocks the most common attacks (DDoS, credential stuffing, known-bad bots) before a single byte reaches your content. You get a Cloudflare login with full admin access from day one.
+- The site is a **static site**: HTML, CSS, and images that load from Cloudflare's global edge network. There is no database, no login system, no admin panel for a hacker to find. The attack surface is small by design.
+- Forms, if we add any in the future, route to **your email inbox** (form-to-email using Formspree or Netlify Forms, sitting on Cloudflare's security layer). Not to a database I control.
+- I keep a private GitHub repository in your name with every line of code, every image, every asset. On the off chance I'm hit by a bus in 2027, you can hand the repository to any web developer and they can keep the site running. **Full code escrow, free, built in.**
+- DNS, hosting, certificate renewals — all set to renew automatically. The site has been known to run unattended for years.
+
+**What I'd ask you to confirm before any launch involving a real intake form**
+
+- Whether the clinic has a HIPAA-aware workflow you'd like the form to feed into (probably your existing electronic health records vendor).
+- Whether the practice has a Business Associate Agreement (BAA) on file with any tool that touches patient data — Formspree's HIPAA plan, Google's GSuite BAA, Microsoft 365's BAA, etc. If we end up needing one, it's a line item I'll flag in writing before any code is written.
+- A contact at your malpractice insurer in case they have specific website language requirements (many do — usually around testimonials, "results" claims, and BEFORE/AFTER imagery).
+
+**What I'll have in writing before launch**
+
+- A short "What's running where" memo: which registrar, which DNS provider, which hosting platform, which code repository, who owns each account, where the credentials live, how to transfer it all out in under an hour if you ever want to leave.
+- A list of every third-party service the site talks to (currently: GitHub Pages or Cloudflare Pages for hosting, plus Cloudflare for DNS. That's it.).
+- A clear ownership statement: every account is in your name. I hold no admin keys you can't revoke.
+
+I'm a mechanical engineering student, not a lawyer, and I'd never draft something legal-sounding for a medical practice. What I will do is **put the simple, verifiable commitments in writing**, and own them in writing, in plain English.
 
 ---
 

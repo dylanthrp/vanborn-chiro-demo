@@ -675,6 +675,63 @@ section.process .lede {
 .review .attr strong { color: var(--c-ink); font-weight: 700; }
 
 /* ===========================================================
+   Trust / Privacy strip — calm, scannable, near the
+   patient decision points (just before staff).
+   =========================================================== */
+.trust {
+  background: #fff;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+}
+.trust .section-eyebrow {
+  font-size: 12px; font-weight: 800;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--c-green);
+  margin-bottom: 18px;
+  padding-bottom: 4px;
+  display: inline-block;
+  border-bottom: 2px solid var(--c-green);
+}
+.trust h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  margin: 0 0 16px;
+  letter-spacing: -0.015em;
+  color: var(--c-ink);
+  max-width: 30em;
+}
+.trust .trust-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+  margin-top: 28px;
+}
+@media (min-width: 720px) { .trust .trust-grid { grid-template-columns: 1fr 1fr; gap: 22px; } }
+@media (min-width: 980px) { .trust .trust-grid { grid-template-columns: repeat(4, 1fr); } }
+.trust-card {
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-left: 3px solid var(--c-green);
+  border-radius: var(--r-md);
+  padding: 18px 18px 20px;
+}
+.trust-card .trust-card-h {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--c-green-dark);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.trust-card p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--c-ink-soft);
+  margin: 0;
+}
+
+/* ===========================================================
    Hours & Map
    =========================================================== */
 section.visit {
@@ -940,7 +997,7 @@ form.book-form .privacy {
 .map-content { padding: 32px; }
 .hours-row { gap: 16px; }
 .hours-row .time { text-align: right; }
-section.conditions, section.reviews, section.staff, section.library, section.book { padding: 72px 0; }
+section.conditions, section.reviews, section.trust, section.staff, section.library, section.book { padding: 72px 0; }
 footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
 @media (max-width: 539px) {
   header.top .wrap { flex-wrap: wrap; gap: 10px; }
@@ -991,6 +1048,91 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
 @media (max-width: 380px) {
   .hi span { display: none; }
   .hi { padding: 10px 12px; }
+}
+
+/* Mobile header: stack into 3 rows (logo centered, primary CTA full-width, secondary CTAs split). */
+@media (max-width: 539px) {
+  header.top .wrap {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px 16px 12px;
+  }
+  /* Logo row: center brand block, breathe more on the spine mark */
+  .brand {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 4px 0 6px;
+  }
+  .brand img {
+    width: 56px;
+    height: 56px;
+  }
+  .brand .name { font-size: 19px; line-height: 1.1; }
+    .brand .name small { font-size: 10.5px; letter-spacing: .12em; }
+  /* Action rows: one full-width primary, then a 1/2 + 1/2 secondary grid */
+  .header-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    margin-top: 2px;
+  }
+  /* Make the FIRST .hi (Call) span both columns at the top */
+  .header-icons .hi:first-child {
+    grid-column: 1 / -1;
+    justify-content: center;
+    padding: 14px 12px;
+    font-size: 15px;
+    background: var(--c-green);
+    color: #fff;
+    border-color: transparent;
+  }
+  .header-icons .hi:first-child:hover {
+    background: var(--c-green-dark);
+  }
+  .header-icons .hi:first-child svg { width: 18px; height: 18px; }
+  /* The other two (Appt, Map) sit on the second row, cream pills */
+  .header-icons .hi {
+    justify-content: center;
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+  .header-icons .hi svg { width: 16px; height: 16px; }
+  .header-icons .hi span { display: inline; }
+  /* Subtle top divider between logo row and action row */
+  .header-icons::before {
+    content: "";
+    grid-column: 1 / -1;
+    height: 1px;
+    background: var(--c-line);
+    opacity: .7;
+    margin: 4px 0 0;
+  }
+  /* Section-nav pills below header: smaller, single horizontal scroll, less visual weight */
+  .topnav .wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6px;
+    padding: 6px 12px 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .topnav .wrap::-webkit-scrollbar { display: none; }
+  .topnav .demo-pill, .topnav .tn-tab {
+    flex: 0 0 auto;
+    font-size: 12px;
+    padding: 5px 10px;
+    white-space: nowrap;
+  }
+  .topnav .demo-pill {
+    margin-right: auto; /* keep DEMO on the left while tabs scroll */
+    font-size: 11px;
+    padding: 4px 8px;
+  }
 }
 
 /* ===========================================================
