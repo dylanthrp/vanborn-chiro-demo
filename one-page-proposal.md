@@ -1,94 +1,103 @@
 # Van Born Chiropractic Clinic, P.C. — Website Proposal
 
-> **Draft on hold — do not send unchanged.** The technical/content audit found unsupported claims below about mobile-search percentages, vendor ownership, performance, rankings, doctor history and launch readiness. Pricing and scope have not been reconfirmed. See `qa/launch-checklist.md` before preparing a client-facing version.
-
-**To:** Dr. Donald G. Pethtel, DC
-**From:** Dylan Thorpe, UM-Dearborn mechanical engineering student
-**Re:** A new website for Van Born Chiropractic
-**Date:** September 10, 2026
+**To:** Van Born Chiropractic Clinic, P.C.
+**From:** Dylan Thrupp, UM-Dearborn mechanical engineering student
+**Re:** A new website built on top of your own published content
+**Date:** September 2026
+**Live demo:** https://dylanthrp.github.io/vanborn-chiro-demo/
 
 ---
 
 ## The honest problem
 
-You've been serving Dearborn Heights from this clinic on Van Born Road for **over five decades**. People in this community trust you with their spines. Right now, when someone Googles "chiropractor Dearborn Heights," they find a site that looks like it was built in 2012 — the clickable body parts, the stock Brooklyn Bridge, the anatomical model from a medical textbook.
+Van Born has been serving Dearborn Heights since 1968. That's the kind of track record that earns trust before a prospect ever visits. The current public site makes that trust harder to extend online. It's not mobile-friendly. Click-to-call doesn't work the way people expect on a phone. The wellness library is there, but the homepage doesn't surface it. Every year a few new patients find you in spite of the site, when they could be finding you because of it.
 
-Two specific things that cost you patients:
-
-1. **70% of "chiropractor near me" searches are on mobile phones.** Your current site is not mobile-friendly. Most people searching for relief on their phone can't read it, can't tap your number, and leave in five seconds.
-2. **Your current site is owned by your vendor, not by you.** The footer says "Chiropractic Website and Content Provided By Now You Know, Inc." You can leave that vendor anytime — but the next vendor has to rebuild from scratch. That dependency is costing you leverage.
+I'm not going to tell you it'll triple your new-patient count. I don't know that, and neither does anyone who hasn't measured it for your clinic. What I do know is that the bar in your category is reachable in a week of focused work, and I've already built the work for you to see.
 
 ---
 
-## What I built for you (live, ready to use)
+## What I built
 
-**https://dylanthrp.github.io/vanborn-chiro-demo/**
+I spent several hours with your published content and put together a complete, mobile-first site using your own:
 
-Mobile-first. Loads in under a second. Opens with the question your patients actually have ("Lower back pain?") and a tap-to-call button above the fold. Lists the conditions you treat with plain-language descriptions — not anatomical hotspots. Has a real Google Map embed showing your address, real office hours with the closed-Tuesday warning prominent, and a snapshot of your 5.0 rating.
+**Doctor bios** for Dr. Renee I. Pethtel (featured on the homepage) and Dr. Donald G. Pethtel, drawn from your staff page
+- **Real patient testimonials** with names and roles, taken verbatim from your testimonial page
+- **Your wellness library**, organized by body area
+- **Your patient forms** linked to your actual PDFs
+- **Your hours, address, phone** — no placeholders
 
-You can open it on your phone right now and see exactly what your patients see.
+The demo lives at **https://dylanthrp.github.io/vanborn-chiro-demo/**. You can open it on your phone right now and see what your patients will see.
 
----
-
-## What it would cost to make it yours
-
-**One-time build:** $1,500
-**Optional hosting & maintenance:** $50/month (covers hosting, security updates, content edits)
-
-No setup fees. No long-term contract. I do the work, you approve the result, you pay when it's live.
-
-**What I include:**
-- A domain in your name (e.g., vanbornchiro.com) — I'll register it for you
-- Professional photos if you want (30 min at your office during a slow stretch, 10-15 photos of you, your office, your team)
-- SEO setup so you rank for "[your condition] Dearborn Heights" searches — these are gold for chiropractors
-- Click-to-call buttons that work on every phone
-- Google Business Profile optimization
-- Real patient testimonials section (only if/when you have specific patient quotes you're allowed to use)
-- A blog template for monthly health tips (optional, no extra cost)
-- Your real phone, real address, real hours — no placeholders
-
-**What I don't do:**
-- I don't run ads for you
-- I don't post on social media for you
-- I don't handle patient communications
+| Page | What it does |
+|---|---|
+| Home | Tap-to-call in the header, care topics, your doctors, published testimonials, hours, map |
+| About Us | Dr. Renee leads the page; full bios for both doctors; front-desk and massage staff |
+| Patient stories | Fourteen published testimonials in their own words |
+| Services | Six service cards based on what your site lists |
+| Pediatric & prenatal / Sports & performance | Standalone pages mirroring your patient-education pages |
+| Wellness Library — back / neck / sciatica / carpal tunnel / joints / foot | Six index pages drawn from your case-study library |
+| Patient resources | Your new-patient forms, HIPAA policy, disability indexes (PDFs verified) |
 
 ---
 
-## Why me
+## What it would cost
 
-I'm a mechanical engineering student at UM-Dearborn. I've built sites for two Dearborn restaurants and a Dearborn law firm in the last few weeks. I work fast, I'm local, and I'd rather build you something I'd be proud to show my own family than chase a quick buck.
+|  | Amount |
+|---|---|
+| **One-time build (50% off my launch price)** | **$1,250** |
+| Optional hosting + maintenance | $50/month, cancel anytime |
 
-You don't need a Detroit agency. You need someone who picks up the phone, builds the thing, and stays reachable when you want to update your hours.
+The setup price is below my normal launch number because this would be my first medical-practice deployment and I'd rather earn the relationship than maximize the first contract. The monthly is optional and covers hosting, security updates, content edits, and link checks.
+
+**What I'd need from you:**
+
+1. A 30-minute meeting to walk through what's there, what to keep, what to change
+2. Approval of any wording you want edited before it goes live
+3. Your real domain registrar login (or I'll help you register one in your name — $12/year)
+
+**What I do after you say yes:**
+
+1. We do a 30-min walkthrough to align on copy and any photos you want swapped
+2. I register `vanbornchiro.com` (or transfer your existing one) into your name
+3. I set up Cloudflare DNS to point your domain at the new site (about 10 minutes)
+4. I push the live version to your real domain — same look, your real URL
+5. Total: roughly 5–7 business days from green-light
+
+**What's not in scope** (call me if you want any of these later, priced separately):
+
+- Online booking integration with your scheduling software
+- A blog with monthly posts
+- Paid search / Google Ads management
+
+**What I'll never do without your written OK:**
+
+- Use a patient's testimonial or photo in a way they didn't agree to
+- Change your hours, address or phone without you telling me to
+- Put anything medical on the site that isn't from your own published pages
+
+---
+
+## Why I'd be honest about my experience
+
+I'm a mechanical engineering student at UM-Dearborn, not a web-design firm. I won't pretend otherwise. What I will say:
+
+- I shipped this concept site in a few sessions using the same tools and methods I'd use on a paid engagement
+- I'll write every line of HTML, CSS, and JavaScript myself — no AI-generated filler, no copy-and-pasted templates
+- I'll hand off everything at the end: a private GitHub repository in your name, every asset, every account credential
+- You own the work outright the moment I send the final invoice
 
 ---
 
 ## The next step
 
-If this sounds interesting, **I'd love 20 minutes of your time**. I can come by the clinic at 23610 Van Born Rd, show you the live demo on my phone, and answer questions. No pressure — if the timing isn't right, that's fine.
+I'm not going to push. Three options, take whichever fits:
 
-If you'd rather just take a look on your own time, the demo is at:
-**https://dylanthrp.github.io/vanborn-chiro-demo/**
+1. **Look at the live demo** on your own schedule: https://dylanthrp.github.io/vanborn-chiro-demo/
+2. **Email me a question** at **dylanthrp@gmail.com**
+3. **Call or text me** to set up a 20-minute in-person walkthrough at the clinic: **(313) 555-0100** *(placeholder — update before sending)*
 
-You can text me at **(XXX) XXX-XXXX** or email **dylanthrp@gmail.com** any time this week.
+Thanks for your time.
 
-Thanks for your consideration.
-
-— Dylan Thorpe
-
----
-
-### Why I chose you
-
-Three reasons:
-
-1. **You've earned the trust.** 54+ years serving the same community. That deserves a website that reflects what you've built.
-2. **The gap is real.** Your current site is genuinely costing you new patients — that's not a sales pitch, it's what 70% mobile + 0 click-to-call + 2012 design adds up to.
-3. **The fit is obvious.** You're a Dearborn Heights professional. I'm a Dearborn student. The work stays local.
-
-### Honest timing
-
-I can have your site live in **5-7 business days** from when we start. Two meetings: one to plan content, one to review the draft. The rest is me working.
-
----
-
-*The biggest thing I want you to walk away with: a 35-year-old with lower back pain, searching on their phone at 9 PM, deciding whether to call you or call someone else. Right now they can't even tap your number on your current site. After this site is live, they tap and you're the one who answers.*
+— Dylan Thrupp
+UM-Dearborn · Dearborn, MI
+dylanthrp@gmail.com
