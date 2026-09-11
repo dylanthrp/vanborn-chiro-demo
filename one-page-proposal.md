@@ -94,7 +94,7 @@ I'm not going to push. Three options, take whichever fits:
 
 1. **Look at the live demo** on your own schedule: https://dylanthrp.github.io/vanborn-chiro-demo/
 2. **Email me a question** at **dylanthrp@gmail.com**
-3. **Call or text me** to set up a 20-minute in-person walkthrough at the clinic: **(313) 555-0100** *(placeholder — update before sending)*
+3. **Call or text me** to set up a 20-minute in-person walkthrough at the clinic: <mark style="background-color: #fff3a8; padding: 2px 4px; border-radius: 3px;">**(313) 555-0100** *[PLACEHOLDER — replace with your cell number before printing]*</mark>
 
 Thanks for your time.
 
