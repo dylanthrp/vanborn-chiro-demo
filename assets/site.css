@@ -1005,11 +1005,7 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
 /* ===========================================================
    Top nav — pills below the header
    =========================================================== */
-.topnav a[data-active] {
-  background: var(--c-green-dark);
-  color: #fff;
-  border-color: var(--c-green-dark);
-}
+/* nav active state handled by body[data-page] + a[data-nav] selectors below */
 
 /* ===========================================================
    Hero — smaller variant for landing pages
@@ -1141,3 +1137,33 @@ ol.resource-cards { list-style: none; padding: 0; margin: 0; display: grid; gap:
 .story-card blockquote p { font-family: var(--serif); font-size: 18px; line-height: 1.55; color: var(--c-ink); margin: 0; font-style: italic; }
 .story-attrib { margin: 18px 0 0; font-size: 14px; color: var(--c-muted); font-style: normal; }
 .story-attrib strong { color: var(--c-ink); }
+
+/* ===========================================================
+   Top nav active state - derived from body[data-page]
+   =========================================================== */
+.topnav a[data-nav] {
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 0 2px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: .01em;
+  color: rgba(255,255,255,.78);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .12s ease, color .12s ease;
+}
+.topnav a[data-nav]:hover { color: #fff; background: rgba(255,255,255,.08); }
+@media (min-width: 760px) {
+  .topnav a[data-nav] { padding: 12px 22px; font-size: 14px; }
+}
+
+body[data-page="home"] .topnav a[data-nav="home"],
+body[data-page="about"] .topnav a[data-nav="about"],
+body[data-page="library"] .topnav a[data-nav="library"],
+body[data-page="patients"] .topnav a[data-nav="patients"] {
+  background: #fff;
+  color: var(--c-green-dark);
+  border-color: rgba(255,255,255,.4);
+}
