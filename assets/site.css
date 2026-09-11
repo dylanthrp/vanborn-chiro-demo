@@ -729,6 +729,95 @@ section.process .lede {
 }
 
 /* ===========================================================
+   Connect with us — single social profile card.
+   =========================================================== */
+section.connect { padding: 72px 0; background: var(--c-cream-2); border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
+section.connect .section-eyebrow {
+  font-size: 12px; font-weight: 800;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--c-green);
+  margin-bottom: 18px;
+  padding-bottom: 4px;
+  display: inline-block;
+  border-bottom: 2px solid var(--c-green);
+}
+section.connect h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  margin: 0 0 16px;
+  letter-spacing: -0.015em;
+  color: var(--c-ink);
+  max-width: 30em;
+}
+section.connect h2 em { font-style: italic; color: var(--c-green); }
+.social-card {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  max-width: 38em;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-left: 3px solid #1877F2; /* Facebook brand blue */
+  border-radius: var(--r-lg);
+  text-decoration: none;
+  color: var(--c-ink);
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(8,70,61,.18);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.social-card:hover {
+  transform: translateY(-1px);
+  border-left-color: #145dbf;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 18px 40px -22px rgba(8,70,61,.28);
+}
+.social-card-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px;
+  border-radius: 999px;
+  background: #1877F2;
+  color: #fff;
+}
+.social-card-icon svg { display: block; }
+.social-card-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.social-card-label {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--c-ink);
+  line-height: 1.15;
+}
+.social-card-handle {
+  font-size: 13.5px;
+  color: var(--c-green-dark);
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+.social-card-meta {
+  font-size: 13px;
+  color: var(--c-ink-soft);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.social-card-arrow {
+  font-size: 22px;
+  color: var(--c-ink-soft);
+  transition: transform .15s ease, color .15s ease;
+}
+.social-card:hover .social-card-arrow {
+  color: var(--c-green);
+  transform: translate(2px, -2px);
+}
+@media (max-width: 539px) {
+  .social-card { grid-template-columns: 48px 1fr; padding: 18px 18px; gap: 14px; }
+  .social-card-arrow { display: none; }
+  .social-card-icon { width: 48px; height: 48px; }
+  .social-card-icon svg { width: 24px; height: 24px; }
+  .social-card-label { font-size: 19px; }
+}
+
+/* ===========================================================
    Hours & Map
    =========================================================== */
 section.visit {
@@ -1086,8 +1175,12 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
   .hi { padding: 10px 12px; }
 }
 
-/* Mobile header: stack into 3 rows (logo centered, primary CTA full-width, secondary CTAs split). */
+/* Mobile header: stack into 3 rows (logo centered, primary CTA full-width, secondary CTAs split).
+   Header AND topnav are NOT sticky on mobile — both scroll away with the page so
+   they don't eat vertical real estate as the user reads. Desktop keeps sticky. */
 @media (max-width: 539px) {
+  header.top { position: static; }
+  nav.topnav { position: static; }
   header.top .wrap {
     flex-direction: column;
     align-items: stretch;
