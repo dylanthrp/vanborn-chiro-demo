@@ -1,7 +1,7 @@
 # Van Born Chiropractic Clinic, P.C. — Website Proposal
 
 **To:** Van Born Chiropractic Clinic, P.C.
-**From:** Dylan Thrupp, UM-Dearborn mechanical engineering student
+**From:** Dylan Thorpe, UM-Dearborn mechanical engineering student
 **Re:** A new website built on top of your own published content
 **Date:** September 2026
 **Live demo:** https://dylanthrp.github.io/vanborn-chiro-demo/
@@ -98,6 +98,6 @@ I'm not going to push. Three options, take whichever fits:
 
 Thanks for your time.
 
-— Dylan Thrupp
+— Dylan Thorpe
 UM-Dearborn · Dearborn, MI
 dylanthrp@gmail.com
