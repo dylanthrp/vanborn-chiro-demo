@@ -1,5 +1,7 @@
 # Van Born Chiropractic Clinic, P.C. — Website Proposal
 
+> **Draft on hold — do not send unchanged.** The technical/content audit found unsupported claims below about mobile-search percentages, vendor ownership, performance, rankings, doctor history and launch readiness. Pricing and scope have not been reconfirmed. See `qa/launch-checklist.md` before preparing a client-facing version.
+
 **To:** Dr. Donald G. Pethtel, DC
 **From:** Dylan Thorpe, UM-Dearborn mechanical engineering student
 **Re:** A new website for Van Born Chiropractic

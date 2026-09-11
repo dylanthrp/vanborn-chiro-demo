@@ -1,0 +1,4 @@
+# Reproducible local QA artifacts, not public website assets.
+qa/*.png
+qa/*.json
+node_modules/

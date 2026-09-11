@@ -4,40 +4,27 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#0e6b5e" />
-<meta name="description" content="Van Born Chiropractic Clinic, P.C. — Dr. Donald G. Pethtel, DC. 54+ years of chiropractic care in Dearborn Heights. Lower back pain, neck pain, headaches, sciatica, whiplash. Call (313) 291-1060." />
-<meta property="og:title" content="Van Born Chiropractic Clinic, P.C. — Dearborn Heights · Since ~1971" />
-<meta property="og:description" content="54+ years of patient-first chiropractic care. Lower back pain, neck pain, headaches, whiplash. Call (313) 291-1060." />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Unsolicited portfolio demo for Van Born Chiropractic, founded in 1968 by the late Dr. Donald L. Pethtel. Not the official clinic website." />
+<meta property="og:title" content="Portfolio demo — Van Born Chiropractic · Since 1968" />
+<meta property="og:description" content="Independent, unsolicited design concept. Not the official clinic website. No appointment or health information is collected." />
 <meta property="og:type" content="website" />
-<title>Van Born Chiropractic Clinic, P.C. — Dearborn Heights · Since ~1971</title>
+<title>Portfolio demo — Van Born Chiropractic · Since 1968</title>
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230e6b5e'/><path d='M32 12 C 22 22, 22 42, 32 52 C 42 42, 42 22, 32 12 Z' fill='%23f5efe2'/></svg>" />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  "name": "Van Born Chiropractic Clinic, P.C.",
-  "image": "https://dylanthrp.github.io/vanborn-chiro-demo/og.png",
-  "telephone": "+1-313-291-1060",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "23610 Van Born Rd",
-    "addressLocality": "Dearborn Heights",
-    "addressRegion": "MI",
-    "postalCode": "48125",
-    "addressCountry": "US"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 42.278134, "longitude": -83.26169 },
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday",    "opens": "09:00", "closes": "18:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "18:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday",  "opens": "09:00", "closes": "18:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday",    "opens": "09:00", "closes": "18:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday",  "opens": "09:00", "closes": "12:00" }
-  ],
-  "medicalSpecialty": "Chiropractic",
-  "founder": { "@type": "Person", "name": "Donald G. Pethtel", "jobTitle": "Doctor of Chiropractic" },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "6", "bestRating": "5", "worstRating": "1" }
+  "@type": "WebPage",
+  "name": "Unsolicited portfolio demo — Van Born Chiropractic",
+  "description": "Independent design concept, not the official clinic website.",
+  "about": {
+    "@type": "MedicalClinic",
+    "name": "Van Born Chiropractic Clinic, P.C.",
+    "url": "https://www.vanbornchiropractic.com/",
+    "foundingDate": "1968",
+    "founder": { "@type": "Person", "name": "Donald L. Pethtel" }
+  }
 }
 </script>
 
@@ -56,7 +43,7 @@
   --c-cream-3:     #e0d4b6;
   --c-ink:         #1a1d24;
   --c-ink-soft:    #3d414b;
-  --c-muted:       #6a6e78;
+  --c-muted:       #5b606a;
   --c-line:        #d8cfb9;
   --c-brass:       #b8975c;
   --c-rust:        #a04a2a;
@@ -470,7 +457,7 @@ section.process .lede {
   background: linear-gradient(180deg, #102b46 0%, #1a3a5c 100%);
   padding: 18px 0;
   position: sticky;
-  top: 72px;
+  top: var(--header-height, 0px);
   z-index: 45;
   box-shadow: 0 4px 12px -8px rgba(0, 0, 0, 0.3);
 }
@@ -507,12 +494,12 @@ section.process .lede {
   font-style: italic;
 }
 @media (max-width: 540px) {
-  .topnav { top: 64px; padding: 12px 0; }
+  .topnav { padding: 12px 0; }
   .tn-tab { font-size: 16px; padding: 10px 12px; min-width: 0; }
 }
 
 /* ===========================================================
-   Doctors grid — two-card layout for sibling docs
+   Doctors grid — two-card layout
    =========================================================== */
 .doctors-grid {
   display: grid;
@@ -609,6 +596,15 @@ section.process .lede {
   letter-spacing: 0.02em;
   border: 2px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 12px -6px rgba(8, 70, 61, 0.3);
+}
+.staff-headshot {
+  width: 150px;
+  height: 194px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  margin: 0 auto 22px;
+  border: 1px solid var(--c-line);
 }
 .staff-card h3 {
   font-family: var(--serif);
@@ -842,7 +838,7 @@ footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-heigh
 footer .small {
   font-size: 11px;
   line-height: 1.55;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,.78);
   margin-top: 32px;
   padding-top: 22px;
   border-top: 1px solid rgba(255,255,255,.08);
@@ -884,7 +880,7 @@ footer .small {
   text-align: center;
   transition: background 0.12s ease, transform 0.12s ease;
 }
-.mobile-bar a.primary { background: var(--c-green-light); border-color: transparent; }
+.mobile-bar a.primary { background: var(--c-green); border-color: transparent; }
 .mobile-bar a:active { transform: translateY(1px); }
 .mobile-bar a .ico { font-size: 18px; line-height: 1; }
 .mobile-bar a.primary .ico { filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25)); }
@@ -1061,47 +1057,87 @@ form.book-form .privacy {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none; animation: none; scroll-behavior: auto; }
 }
+/* Audit: responsive offsets, readable mobile portraits and keyboard access. */
+:root { --header-height: 0px; --nav-height: 0px; }
+[id] { scroll-margin-top: calc(var(--header-height) + var(--nav-height) + 18px); }
+.demo-banner { background: var(--c-green-dark); color: var(--c-cream); padding: 12px 22px; text-align: center; font-size: 13px; }
+.demo-banner a { color: #fff; text-decoration: underline; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 100; transform: translateY(-200%); background: var(--c-cream); padding: 12px 18px; }
+.skip-link:focus { transform: none; }
+:focus-visible { outline: 3px solid var(--c-rust); outline-offset: 4px; }
+.topnav :focus-visible, .mobile-bar :focus-visible, footer :focus-visible, .demo-banner :focus-visible { outline-color: #fff; }
+.hours-link { font-size: 13px; font-weight: 700; text-align: center; }
+.brand { min-width: 0; }
+.brand .mark { flex-shrink: 0; }
+.wrap > *, .doc-card > *, .hero .meta > * { min-width: 0; }
+.portrait { margin: 0; }
+.appointment-card { background: #fff; border: 1px solid var(--c-line); border-radius: var(--r-lg); padding: 28px; }
+.map { aspect-ratio: auto; }
+.map-content { padding: 32px; }
+.hours-row { gap: 16px; }
+.hours-row .time { text-align: right; }
+section.conditions, section.reviews, section.staff, section.library, section.book { padding: 72px 0; }
+footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
+@media (max-width: 539px) {
+  header.top .wrap { flex-wrap: wrap; gap: 10px; }
+  .brand { flex: 1; }
+  .hours-link { order: 3; flex-basis: 100%; }
+  .doc-card { grid-template-columns: 1fr; }
+  .doc-card img { width: 100%; height: 280px; object-fit: contain; background: var(--c-cream-2); }
+  .topnav .wrap { display: grid; grid-template-columns: 1fr 1fr; }
+  .tn-tab { max-width: none; }
+  .hero .meta strong { font-size: 20px; }
+  .lib-grid { grid-template-columns: 1fr 1fr; }
+  .lib-card { padding: 18px 10px; }
+  .btn { padding: 14px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<aside class="demo-banner"><strong>Unsolicited portfolio demo — not the official clinic website.</strong> Independent design concept; not endorsed by the clinic. <a href="https://www.vanbornchiropractic.com/">Visit the official website</a>.</aside>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#">
+    <a class="brand" href="#top">
       <span class="mark" aria-hidden="true">V</span>
-      <span class="name">Van Born Chiropractic<small>Dearborn Heights · Since ~1971</small></span>
+      <span class="name">Van Born Chiropractic<small>Dearborn Heights · Since 1968</small></span>
     </a>
-    <span class="status-pill" id="status-pill" aria-live="polite">Checking…</span>
-    <a class="call" href="tel:+13132911060">📞 <span class="num">(313) 291-1060</span></a>
+    <a class="hours-link" href="#contact">Hours &amp; availability</a>
+    <a class="call" href="tel:+13132911060" aria-label="Call clinic at (313) 291-1060">📞 <span class="num">(313) 291-1060</span></a>
   </div>
 </header>
 
 <!-- ===========================================================
      HERO
      =========================================================== -->
-<section class="hero">
+<main id="main" tabindex="-1">
+<section class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Dearborn Heights · Family-run · 54+ years</p>
+      <p class="eyebrow">Dearborn Heights · Established 1968</p>
       <h1>Lower back pain?<br>Get back to <em>what you love.</em></h1>
-      <p class="lede">Real chiropractic care from Dr. Donald Pethtel — no drugs, no surgery, just a careful diagnosis and a plan that gets you moving again.</p>
+      <p class="lede">Meet Dr. Renee I. Pethtel and Dr. Donald G. Pethtel. Explore the clinic's published information, then contact the office to discuss your care.</p>
 
       <div class="ctas">
         <a class="btn btn-call" href="tel:+13132911060">📞 (313) 291-1060</a>
-        <a class="btn btn-book" href="#book">Book online</a>
+        <a class="btn btn-book" href="#book">Appointment info</a>
         <a class="btn btn-ghost" href="#conditions">What we treat</a>
       </div>
 
       <div class="meta">
-        <span><strong>54+</strong>Years serving Dearborn Heights</span>
-        <span><strong>5.0</strong>Yahoo client rating</span>
-        <span><strong>$0</strong>Free phone consultation</span>
+        <span><strong>1968</strong>Clinic established</span>
+        <span><strong>2 doctors</strong>Meet the team</span>
+        <span><strong>Michigan</strong>Dearborn Heights</span>
       </div>
     </div>
 
     <!-- Real Dr. Donald G. Pethtel photo -->
     <figure class="portrait" aria-label="Dr. Donald G. Pethtel, DC">
-      <img src="assets/donald1.jpg" alt="Dr. Donald G. Pethtel, DC" />
+      <img src="assets/donald-portrait.jpg" alt="Dr. Donald G. Pethtel, DC" width="1415" height="1111" fetchpriority="high" />
     </figure>
   </div>
 </section>
@@ -1111,10 +1147,10 @@ form.book-form .privacy {
      =========================================================== -->
 <nav class="topnav" aria-label="Section navigation">
   <div class="wrap">
-    <a href="#top" class="tn-tab tn-active">Home</a>
+    <a href="#top" class="tn-tab">Home</a>
     <a href="#about" class="tn-tab">About Us</a>
     <a href="#library" class="tn-tab">Wellness Library</a>
-    <a href="#contact" class="tn-tab">Patients</a>
+    <a href="#patients" class="tn-tab">Patients &amp; forms</a>
   </div>
 </nav>
 
@@ -1124,8 +1160,8 @@ form.book-form .privacy {
 <section class="conditions" id="conditions">
   <div class="wrap">
     <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">What we treat</p>
-    <h2>If it hurts to move,<br>we can probably <em>help.</em></h2>
-    <p class="lede">Chiropractic care for the most common musculoskeletal problems — from weekend-warrior back pain to whiplash that won't quit.</p>
+    <h2>Questions about pain<br>and <em>movement?</em></h2>
+    <p class="lede">Topics to discuss with a qualified clinician. An individual assessment is needed to determine what care is appropriate; these descriptions do not promise treatment outcomes.</p>
 
     <div class="condition-grid">
 
@@ -1142,7 +1178,7 @@ form.book-form .privacy {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="4"/><path d="M9 13l-1 8M15 13l1 8M12 13v8"/></svg>
         </div>
         <h3>Neck pain</h3>
-        <p>Tech neck, stiff neck from sleep, post-accident — gentle adjustments that restore motion.</p>
+        <p>Neck stiffness and discomfort can have different causes. Ask about an assessment.</p>
       </article>
 
       <article class="condition">
@@ -1150,7 +1186,7 @@ form.book-form .privacy {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4l3 6 6 1-4.5 4 1 6L12 18l-5.5 3 1-6L3 11l6-1z"/></svg>
         </div>
         <h3>Headaches &amp; migraines</h3>
-        <p>Cervicogenic headaches, tension headaches — many cases trace back to the upper neck.</p>
+        <p>Headaches have many possible causes. Discuss new or changing symptoms with a clinician.</p>
       </article>
 
       <article class="condition">
@@ -1158,7 +1194,7 @@ form.book-form .privacy {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </div>
         <h3>Sciatica</h3>
-        <p>That shooting pain down your leg — often a pinched nerve we can free up without surgery.</p>
+        <p>Pain travelling down the leg needs an assessment to understand its cause and care options.</p>
       </article>
 
       <article class="condition">
@@ -1166,7 +1202,7 @@ form.book-form .privacy {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9 9l6 6"/></svg>
         </div>
         <h3>Whiplash</h3>
-        <p>After an auto accident — the pain often shows up days later. Early care makes a difference.</p>
+        <p>Seek an appropriate medical assessment for neck pain following an auto accident.</p>
       </article>
 
       <article class="condition">
@@ -1174,7 +1210,7 @@ form.book-form .privacy {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19l5-7 4 5 7-10"/></svg>
         </div>
         <h3>Scoliosis</h3>
-        <p>Postural management and gentle adjustments to reduce pain and slow progression.</p>
+        <p>Discuss spinal curvature, discomfort and suitable management options with your clinician.</p>
       </article>
 
       <article class="condition">
@@ -1182,7 +1218,7 @@ form.book-form .privacy {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
         </div>
         <h3>Chronic pain</h3>
-        <p>Long-standing pain that's not getting better on its own. A plan, not a pill.</p>
+        <p>Persistent pain may need a broader assessment and an individual approach to management.</p>
       </article>
 
       <article class="condition">
@@ -1190,7 +1226,7 @@ form.book-form .privacy {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg>
         </div>
         <h3>Wellness &amp; prevention</h3>
-        <p>Stay out of pain in the first place — regular adjustments for active Dearborn families.</p>
+        <p>Ask about movement, daily habits and care options suited to your health goals.</p>
       </article>
 
     </div>
@@ -1206,13 +1242,9 @@ form.book-form .privacy {
       <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">Meet the doctors</p>
       <h2>A family practice,<br>for your <em>family.</em></h2>
 
-      <p class="pullquote">"My father opened this clinic in 1968. Three generations of patients later, we're still here — still family-run, still the way he would have done it."</p>
-
-      <p>Van Born Chiropractic has been a fixture on Van Born Road since <strong>1968</strong>, when the late <strong>Dr. Donald L. Pethtel, D.C., D.A.C.S.</strong> opened the doors. His children — Dr. Renee and Dr. Donald G. — carry on the practice today, joined by a small team that knows most patients by name.</p>
-
-      <p>Both doctors graduated from <strong>Life University in Marietta, Georgia</strong>, the same chiropractic school their father attended. The approach is unchanged: a careful diagnosis, conservative treatment, and the kind of attention you only get from a small family-run practice.</p>
-
-      <p>Chiropractic care without drugs or surgery — for everyday back pain, the car accident that won't quit, and the patients who have been told they just have to live with it.</p>
+      <p>Van Born Chiropractic was opened in <strong>1968</strong> by the late <strong>Dr. Donald L. Pethtel, D.C., D.A.C.S.</strong>, whom Dr. Renee identifies as her father in her published biography.</p>
+      <p>Both doctors graduated from <strong>Life University in Marietta, Georgia</strong>: Dr. Renee in 1996 and Dr. Donald G. in 2001.</p>
+      <p>Biographical details and portraits are drawn from the <a href="https://www.vanbornchiropractic.com/page/doctor.html">official doctors and staff page</a>.</p>
     </div>
 
     <div class="doctors-grid">
@@ -1220,17 +1252,17 @@ form.book-form .privacy {
         <img src="assets/renee1.jpg" alt="Dr. Renee I. Pethtel, B.S., D.C." />
         <div class="doc-info">
           <h3>Dr. Renee I. Pethtel, B.S., D.C.</h3>
-          <p class="doc-title">Pediatric &amp; prenatal specialist</p>
-          <p>A 1996 graduate of Life University. Dr. Renee is trained under the International Chiropractic Pediatric Association and is certified in the Webster Technique for pregnant moms. A member of the Michigan Association of Chiropractors since 1996, she has spent nearly three decades serving Dearborn Heights families.</p>
+          <p class="doc-title">Doctor of Chiropractic</p>
+          <p>A 1996 graduate of Life University. Her published biography describes postgraduate training with the International Chiropractic Pediatric Association and certification in the Webster Technique.</p>
         </div>
       </article>
 
       <article class="doc-card">
-        <img src="assets/donald1.jpg" alt="Dr. Donald G. Pethtel, DC" />
+        <img src="assets/donald-portrait.jpg" alt="Dr. Donald G. Pethtel, DC" width="1415" height="1111" loading="lazy" decoding="async" />
         <div class="doc-info">
           <h3>Dr. Donald G. Pethtel, D.C.</h3>
           <p class="doc-title">U.S. Marine Corps veteran</p>
-          <p>A 2001 graduate of Life University. Dr. Don served in the Marine Corps before his chiropractic career, which gives him a deep understanding of the physical and mental demands that lead to injury. He previously operated clinics in East Lansing and Austin before bringing his experience home to the family practice.</p>
+          <p>A 2001 graduate of Life University. Dr. Donald G. served in the Marine Corps before his chiropractic education and previously operated clinics in East Lansing, Michigan, and Austin, Texas.</p>
         </div>
       </article>
     </div>
@@ -1243,29 +1275,29 @@ form.book-form .privacy {
 <section class="process">
   <div class="wrap">
     <p class="eyebrow">How it works</p>
-    <h2>Four steps from <em>first call</em> to feeling better.</h2>
-    <p class="lede">No mystery, no pressure. Here's exactly what your first visit looks like.</p>
+    <h2>Preparing for your <em>first conversation.</em></h2>
+    <p class="lede">A guide to questions you can ask the clinic, not a confirmed appointment or treatment process.</p>
 
     <div class="process-grid">
       <div class="step">
         <div class="n">01</div>
         <h3>Call us</h3>
-        <p>Free phone consultation. Tell us what's hurting and we'll tell you whether we can help — no obligation.</p>
+        <p>Contact the clinic to ask about appointments, fees and availability.</p>
       </div>
       <div class="step">
         <div class="n">02</div>
         <h3>First visit</h3>
-        <p>A complete history, a thorough exam, and a clear explanation of what we found and what we recommend.</p>
+        <p>Ask what to bring and which official patient forms to complete.</p>
       </div>
       <div class="step">
         <div class="n">03</div>
         <h3>Your plan</h3>
-        <p>Personalized treatment — typically a series of gentle adjustments over a few weeks. No cookie-cutter plans.</p>
+        <p>Discuss assessment findings, options, risks, alternatives and costs with your clinician.</p>
       </div>
       <div class="step">
         <div class="n">04</div>
         <h3>Stay well</h3>
-        <p>Once you're out of pain, we help you stay that way. Wellness visits for patients who want to keep moving.</p>
+        <p>Ask how progress will be reviewed and when further assessment may be needed.</p>
       </div>
     </div>
   </div>
@@ -1277,44 +1309,26 @@ form.book-form .privacy {
 <section class="reviews">
   <div class="wrap">
     <p class="section-eyebrow">What patients say</p>
-    <h2><em>Three decades</em> of trust, one family at a time.</h2>
-    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 40px;">Real patients, real results. Selected from testimonials published by the clinic.</p>
+    <h2>Published <em>patient experiences.</em></h2>
+    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 40px;">Short, exact excerpts from the clinic's testimonial page. Individual experiences are not evidence of typical outcomes. Results vary by patient and condition; no result is guaranteed.</p>
 
     <div class="review-grid">
       <article class="review">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I suffered from extreme back pain that hindered activities in my life. After being under the care of Dr. Renee, I am able to function daily without debilitating pain, and I am much more energetic. I highly recommend chiropractic care for improved health and wellness."</blockquote>
-        <div class="attr"><strong>— Angela Bell</strong> · Radiographer</div>
+        <blockquote>Chiropractic care has improved my range of motion and reduced pain in my lower back and neck.</blockquote>
+        <div class="attr"><strong>— Jeremy Gordon</strong> · CPA</div>
+        <a href="https://www.vanbornchiropractic.com/page/1testimonials.html">Read original testimonial</a>
       </article>
 
       <article class="review">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Our family has been coming to see Dr. Renee for 11 years. My husband and I with our three boys started seeing her for allergies, back pain and migraines. We all got very good results. Now I have two more boys to add, one with asthma and one with autism, and their results are amazing."</blockquote>
-        <div class="attr"><strong>— The Jones Family</strong> · 11-year patients</div>
+        <blockquote>The staff is very courteous and helpful.</blockquote>
+        <div class="attr"><strong>— Christina Marger</strong></div>
+        <a href="https://www.vanbornchiropractic.com/page/1testimonials.html">Read original testimonial</a>
       </article>
 
       <article class="review">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Within my first adjustment my neck began to turn and my back actually felt better. After a couple of weeks I had full range of motion and no pain. To me, it was a miracle. Dr. Renee keeps me pain free so I am able to work."</blockquote>
-        <div class="attr"><strong>— Vicky Hall</strong> · Cleaning Business Owner</div>
-      </article>
-
-      <article class="review">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Before coming to see Dr. Renee, I suffered from a pinched nerve in my neck. My family physician prescribed muscle relaxers and told me that was all she could do for me. After continuously seeing Dr. Renee, I am pain free and have been so for over a year now."</blockquote>
-        <div class="attr"><strong>— Joann Sadler</strong> · Nursing student</div>
-      </article>
-
-      <article class="review">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I limped into the clinic 2½ months ago. Now I am pain free almost all day every day. I used to think before getting out of bed, 'okay, what hurts the most this morning.' A month ago I said, 'nothing hurts this morning.'"</blockquote>
-        <div class="attr"><strong>— John Crute</strong> · long-time patient</div>
-      </article>
-
-      <article class="review">
-        <div class="stars">★★★★★</div>
-        <blockquote>"After just a couple of adjustments, not only was my hip pain gone, but also so was the pain my specialist hadn't been able to resolve. Many tests and drugs later, the pain just got worse — until I tried chiropractic."</blockquote>
-        <div class="attr"><strong>— Michael Stiles</strong> · Postal Worker</div>
+        <blockquote>I think highly of their methods and attention to detail.</blockquote>
+        <div class="attr"><strong>— Domenic Paesani</strong> · Ford Retiree</div>
+        <a href="https://www.vanbornchiropractic.com/page/1testimonials.html">Read original testimonial</a>
       </article>
     </div>
   </div>
@@ -1326,29 +1340,29 @@ form.book-form .privacy {
 <section class="staff">
   <div class="wrap">
     <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">Meet the team</p>
-    <h2>The people who answer <em>the phone</em>.</h2>
-    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 50px;">A small, long-tenured staff that knows most patients by name. You'll see the same faces every visit.</p>
+    <h2>The people on <em>the team</em>.</h2>
+    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 50px;">Meet the team listed on the <a href="https://www.vanbornchiropractic.com/page/doctor.html">clinic's official staff page</a>.</p>
 
     <div class="staff-grid">
       <article class="staff-card">
-        <div class="staff-avatar" data-initial="JC" style="background: linear-gradient(160deg, #c4b48e, #e0d4b6);"></div>
+        <img class="staff-headshot" src="assets/jane-carroll.png" alt="Jane Carroll" width="150" height="200" loading="lazy" decoding="async" />
         <h3>Jane Carroll</h3>
-        <p class="staff-role">Reception &amp; scheduling</p>
-        <p>30+ years in the medical field working as a receptionist, scribe, and transcriptionist. "I am so grateful to be a part of the Van Born Chiropractic family. I look forward to helping our patients achieve better health."</p>
+        <p class="staff-role">Clinic team</p>
+        <p>Jane's published biography describes more than 30 years in the medical field as a receptionist, scribe and transcriptionist.</p>
       </article>
 
       <article class="staff-card">
-        <div class="staff-avatar" data-initial="SJ" style="background: linear-gradient(160deg, #d8c8a4, #ebe2cd);"></div>
+        <img class="staff-headshot" src="assets/IMG_2608-200.jpg" alt="Sam Jernigan" width="200" height="251" loading="lazy" decoding="async" />
         <h3>Sam Jernigan</h3>
         <p class="staff-role">Licensed Massage Therapist &amp; Esthetician</p>
-        <p>Specializes in therapeutic massage and recovery support for chiropractic patients. "Chiropractic care and massage therapy are the most effective ways to relieve discomfort and support recovery."</p>
+        <p>Sam's biography lists licensure in massage therapy and esthetics, a background in sports, and an interest in travel and family time.</p>
       </article>
 
       <article class="staff-card">
-        <div class="staff-avatar" data-initial="LK" style="background: linear-gradient(160deg, #b8a888, #d8c8a4);"></div>
+        <img class="staff-headshot" src="assets/Loretta-Klapko.jpeg" alt="Loretta (Laurie) Klapko" width="741" height="960" loading="lazy" decoding="async" />
         <h3>Laurie (Loretta) Klapko</h3>
-        <p class="staff-role">Patient support</p>
-        <p>Passionate about working in healthcare and helping patients on their journey to better health. "I truly enjoy helping patients on their journey to better health."</p>
+        <p class="staff-role">Clinic team</p>
+        <p>Known as Laurie, she describes a passion for working in health care and helping patients on their journey to better health.</p>
       </article>
     </div>
   </div>
@@ -1361,52 +1375,52 @@ form.book-form .privacy {
   <div class="wrap">
     <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">Wellness library</p>
     <h2>Answers to the <em>questions</em> you have.</h2>
-    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 50px;">Plain-language articles from the clinic's wellness library. Click any body area or topic to learn more.</p>
+    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 50px;">These links open the clinic's external original library, not articles migrated into this demo. External content is maintained by its publisher and is not medical advice.</p>
 
     <div class="lib-grid">
-      <a class="lib-card" href="#">
+      <a class="lib-card" href="https://www.vanbornchiropractic.com/articles/back/">
         <div class="lib-ico">🦴</div>
-        <h3>Back &amp; spine</h3>
-        <p>Lower back pain · Disc problems · Scoliosis · Muscle spasm</p>
+        <h3>Lower back</h3>
+        <p>Original back-pain article collection ↗</p>
       </a>
-      <a class="lib-card" href="#">
+      <a class="lib-card" href="https://www.vanbornchiropractic.com/articles/neck/">
         <div class="lib-ico">🧠</div>
-        <h3>Head &amp; neck</h3>
-        <p>Headaches · Migraines · Concussion · Vertigo · Earache</p>
+        <h3>Neck</h3>
+        <p>Original neck article collection ↗</p>
       </a>
-      <a class="lib-card" href="#">
+      <a class="lib-card" href="https://www.vanbornchiropractic.com/articles/sciatica/">
         <div class="lib-ico">🦵</div>
-        <h3>Legs &amp; feet</h3>
-        <p>Sciatica · Plantar fasciitis · Knee pain · Joint pain</p>
+        <h3>Sciatica</h3>
+        <p>Original sciatica article collection ↗</p>
       </a>
-      <a class="lib-card" href="#">
+      <a class="lib-card" href="https://www.vanbornchiropractic.com/articles/carpal+tunnel/">
         <div class="lib-ico">✋</div>
-        <h3>Arms &amp; hands</h3>
-        <p>Carpal tunnel · Arthritis · Numbness · Arm pain</p>
+        <h3>Carpal tunnel</h3>
+        <p>Original carpal-tunnel article collection ↗</p>
       </a>
-      <a class="lib-card" href="#">
-        <div class="lib-ico">🫁</div>
-        <h3>Allergies &amp; asthma</h3>
-        <p>Breathing · Sinusitis · Allergies · Lung health</p>
+      <a class="lib-card" href="https://www.vanbornchiropractic.com/articles/joints/">
+        <div class="lib-ico">🦴</div>
+        <h3>Joints</h3>
+        <p>Original joint article collection ↗</p>
       </a>
-      <a class="lib-card" href="#">
-        <div class="lib-ico">❤️</div>
-        <h3>Heart &amp; blood pressure</h3>
-        <p>Hypertension · Fibrillation · Circulation</p>
+      <a class="lib-card" href="https://www.vanbornchiropractic.com/articles/foot/">
+        <div class="lib-ico">🦶</div>
+        <h3>Foot</h3>
+        <p>Original foot article collection ↗</p>
       </a>
-      <a class="lib-card" href="#">
+      <a class="lib-card" href="https://www.vanbornchiropractic.com/page/pediatric.html">
         <div class="lib-ico">🤰</div>
-        <h3>Pregnancy &amp; pediatric</h3>
-        <p>Webster Technique · Newborn care · Colic · Childhood wellness</p>
+        <h3>Kids &amp; chiropractic</h3>
+        <p>Original patient education page ↗</p>
       </a>
-      <a class="lib-card" href="#">
+      <a class="lib-card" href="https://www.vanbornchiropractic.com/page/sports-and-chiropractic.html">
         <div class="lib-ico">🚗</div>
-        <h3>Auto &amp; work injuries</h3>
-        <p>Whiplash · Workplace injuries · Workers' comp</p>
+        <h3>Sports &amp; chiropractic</h3>
+        <p>Original patient education page ↗</p>
       </a>
     </div>
     <p style="text-align:center; margin-top: 36px; font-size: 14px; color: var(--c-muted);">
-      See something specific? <a href="tel:+13132911060" style="color: var(--c-green-dark); font-weight: 700;">Call (313) 291-1060</a> and we'll point you to the right article.
+      Questions about care? <a href="tel:+13132911060" style="color: var(--c-green-dark); font-weight: 700;">Call (313) 291-1060</a> to speak with the clinic.
     </p>
   </div>
 </section>
@@ -1428,7 +1442,8 @@ form.book-form .privacy {
         <div class="hours-row"><span class="day">Thursday</span><span class="time">9:00 AM – 6:00 PM</span></div>
         <div class="hours-row"><span class="day">Friday</span><span class="time">9:00 AM – 6:00 PM</span></div>
         <div class="hours-row"><span class="day">Saturday</span><span class="time">9:00 AM – 12:00 PM (1st, 3rd, 5th)</span></div>
-        <p class="closed-warn">⚠ Closed Tuesdays — please plan your visits accordingly.</p>
+        <p class="closed-warn">Saturday hours apply only to the 1st, 3rd and 5th Saturdays of the month, when applicable. Closed Sundays and Tuesdays. Local clinic time (Eastern). Call to confirm holiday hours and availability.</p>
+        <p><a href="https://www.vanbornchiropractic.com/">Hours source: official clinic homepage</a></p>
       </div>
 
       <div class="info-block">
@@ -1458,24 +1473,51 @@ form.book-form .privacy {
 
     <div>
       <div class="map">
-        <iframe
-          title="Van Born Chiropractic Clinic location map"
-          loading="lazy"
-          src="https://www.google.com/maps?q=Van+Born+Chiropractic+Clinic,+23610+Van+Born+Rd,+Dearborn+Heights,+MI+48125&output=embed">
-        </iframe>
+        <div class="map-content"><h3>23610 Van Born Rd</h3><p>Dearborn Heights, MI 48125</p><a class="btn btn-call" href="https://maps.google.com/?q=23610+Van+Born+Rd+Dearborn+Heights+MI+48125">Open directions in Google Maps ↗</a><p>Google Maps opens only when you choose this link.</p></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===========================================================
+     APPOINTMENT INFORMATION
+     =========================================================== -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div>
+      <h2>Appointment information<br><em>Call to schedule.</em></h2>
+      <p class="lede">This is an unsolicited portfolio demo, not the clinic's appointment system. This demo does not collect personal or health information and cannot request or confirm appointments.</p>
+      <ul>
+        <li>Contact the clinic directly for availability.</li>
+        <li>Ask about fees, insurance and first-visit requirements.</li>
+        <li>Do not send personal or health information to this demo.</li>
+      </ul>
+    </div>
+
+    <div class="appointment-card">
+      <h3>Speak with the clinic</h3>
+      <p>Use the clinic's published phone number to arrange a visit.</p>
+      <a class="btn btn-call" href="tel:+13132911060">Call (313) 291-1060</a>
+      <p><a href="#contact">View office hours</a></p>
+      <h3 id="patients">Official patient resources</h3>
+      <p>External resources on the clinic's original website; not demo forms.</p>
+      <ul><li><a href="https://www.vanbornchiropractic.com/page/npf.html">Patient forms ↗</a></li><li><a href="https://www.vanbornchiropractic.com/page/services.html">Services ↗</a></li><li><a href="https://www.vanbornchiropractic.com/page/contact.html">Official contact page ↗</a></li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     STICKY MOBILE ACTION BAR
+     =========================================================== -->
+</main>
 <footer id="contact-bottom">
   <div class="wrap">
     <div>
       <h4>Van Born Chiropractic Clinic, P.C.</h4>
-      <p>Dr. Donald G. Pethtel, DC<br>23610 Van Born Rd<br>Dearborn Heights, MI 48125<br><a href="tel:+13132911060">(313) 291-1060</a></p>
+      <p>Dr. Renee I. Pethtel &amp; Dr. Donald G. Pethtel<br>Founded in 1968 by the late Dr. Donald L. Pethtel<br>23610 Van Born Rd<br>Dearborn Heights, MI 48125<br><a href="tel:+13132911060">(313) 291-1060</a></p>
     </div>
     <div>
-      <h4>What we treat</h4>
+      <h4>Care topics</h4>
       <ul>
         <li><a href="#conditions">Lower back pain</a></li>
         <li><a href="#conditions">Neck pain &amp; headaches</a></li>
@@ -1495,80 +1537,9 @@ form.book-form .privacy {
     </div>
   </div>
   <div class="wrap">
-    <p class="small">Chiropractic care, like all medical care, carries inherent risks. Results vary by patient and condition. The information on this website is for general educational purposes only and does not constitute medical advice. © 2026 Van Born Chiropractic Clinic, P.C.</p>
+    <p class="small">Unsolicited portfolio demo, not an official or endorsed clinic website. Clinic names, portraits and excerpts belong to their respective owners. Results vary by patient and condition. This general information is not medical advice. Confirm all care details with the clinic.</p>
   </div>
 </footer>
-
-<!-- ===========================================================
-     BOOK ONLINE
-     =========================================================== -->
-<section class="book" id="book">
-  <div class="wrap">
-    <div>
-      <h2>Book your <em>visit</em><br>in under a minute.</h2>
-      <p class="lede">Skip the phone call if you'd rather — fill out the form and we'll confirm your appointment within one business day.</p>
-      <ul>
-        <li><span class="check">✓</span> Free phone consultation before you commit</li>
-        <li><span class="check">✓</span> Same-week appointments usually available</li>
-        <li><span class="check">✓</span> Most insurance accepted; we'll verify before your visit</li>
-        <li><span class="check">✓</span> No referral needed for new patients</li>
-      </ul>
-    </div>
-
-    <form class="book-form" onsubmit="event.preventDefault(); document.getElementById('book-confirm').hidden = false; this.hidden = true;">
-      <label for="b-name">Your name</label>
-      <input id="b-name" type="text" placeholder="Full name" required />
-
-      <div class="row-2">
-        <div>
-          <label for="b-phone">Phone</label>
-          <input id="b-phone" type="tel" placeholder="(313) 555-0123" required />
-        </div>
-        <div>
-          <label for="b-email">Email</label>
-          <input id="b-email" type="email" placeholder="you@example.com" />
-        </div>
-      </div>
-
-      <label for="b-when">Preferred day</label>
-      <select id="b-when">
-        <option>As soon as possible</option>
-        <option>Monday</option>
-        <option>Wednesday</option>
-        <option>Thursday</option>
-        <option>Friday</option>
-        <option>Saturday (1st, 3rd, 5th)</option>
-      </select>
-
-      <label for="b-reason">What brings you in?</label>
-      <select id="b-reason">
-        <option>Lower back pain</option>
-        <option>Neck pain</option>
-        <option>Headaches / migraines</option>
-        <option>Sciatica</option>
-        <option>Whiplash / auto accident</option>
-        <option>Wellness / preventive care</option>
-        <option>Not sure / other</option>
-      </select>
-
-      <label for="b-notes">Anything else? (optional)</label>
-      <textarea id="b-notes" placeholder="A sentence is plenty."></textarea>
-
-      <button type="submit" class="btn-submit">Request my appointment</button>
-      <p class="privacy">We'll never share your information.</p>
-    </form>
-
-    <div id="book-confirm" hidden style="background:#fff;border:1px solid var(--c-line);border-radius:var(--r-lg);padding:40px 30px;text-align:center;box-shadow:0 1px 0 rgba(0,0,0,.02),0 12px 36px -20px rgba(8,70,61,.18);">
-      <div style="font-size:48px;color:var(--c-green);margin-bottom:14px;">✓</div>
-      <h3 style="font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 10px;">Request received.</h3>
-      <p style="color:var(--c-ink-soft);margin:0;font-size:15px;">Dr. Pethtel's office will call you within one business day to confirm your appointment.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===========================================================
-     STICKY MOBILE ACTION BAR
-     =========================================================== -->
 <nav class="mobile-bar" aria-label="Quick contact">
   <a href="tel:+13132911060" class="primary">
     <span class="ico">📞</span>
@@ -1576,7 +1547,7 @@ form.book-form .privacy {
   </a>
   <a href="#book">
     <span class="ico">📝</span>
-    <span>Book</span>
+    <span>Appointment info</span>
   </a>
   <a href="https://maps.google.com/?q=Van+Born+Chiropractic+Clinic+23610+Van+Born+Rd+Dearborn+Heights+MI+48125" target="_blank" rel="noopener">
     <span class="ico">📍</span>
@@ -1584,45 +1555,22 @@ form.book-form .privacy {
   </a>
 </nav>
 
-<!-- ===========================================================
-     STATUS PILL — auto-detect open/closed from local time
-     =========================================================== -->
+
+
 <script>
-(function () {
-  var pill = document.getElementById('status-pill');
-  if (!pill) return;
-  // Clinic hours (verified from their current site + Yelp)
-  // 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
-  var hours = {
-    1: [9, 0, 18, 0],   // Mon 9-6
-    3: [9, 0, 18, 0],   // Wed 9-6
-    4: [9, 0, 18, 0],   // Thu 9-6
-    5: [9, 0, 18, 0],   // Fri 9-6
-    6: [9, 0, 12, 0],   // Sat 9-12 (1st/3rd/5th — best-effort)
+// Observe actual rendered header heights, including wrapped text and zoom.
+(() => {
+  const header = document.querySelector('header.top');
+  const nav = document.querySelector('.topnav');
+  const updateOffsets = () => {
+    document.documentElement.style.setProperty('--header-height', header.getBoundingClientRect().height + 'px');
+    document.documentElement.style.setProperty('--nav-height', nav.getBoundingClientRect().height + 'px');
   };
-  var now = new Date();
-  var day = now.getDay();
-  var mins = now.getHours() * 60 + now.getMinutes();
-  var h = hours[day];
-  var open = false;
-  if (h) {
-    var openM = h[0] * 60 + h[1];
-    var closeM = h[2] * 60 + h[3];
-    if (mins >= openM && mins < closeM) open = true;
-  }
-  if (open) {
-    var closesAt = h[2] * 60 + h[3];
-    var remain = closesAt - mins;
-    var rh = Math.floor(remain / 60);
-    var rm = remain % 60;
-    pill.textContent = rh > 0 ? ('Open · closes ' + (rm ? (rh + 'h ' + rm + 'm') : (rh + 'h'))) : 'Open now';
-    pill.classList.remove('closed');
-  } else {
-    pill.textContent = 'Closed · opens Mon 9 AM';
-    pill.classList.add('closed');
-  }
+  const observer = new ResizeObserver(updateOffsets);
+  observer.observe(header);
+  observer.observe(nav);
+  updateOffsets();
 })();
 </script>
-
 </body>
 </html>
