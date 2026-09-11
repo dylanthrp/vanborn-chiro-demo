@@ -464,7 +464,226 @@ section.process .lede {
 .step p { margin: 0; font-size: 14px; color: rgba(255,255,255,.86); line-height: 1.6; }
 
 /* ===========================================================
-   Reviews
+   Top nav tabs — mirrors original Van Born menu
+   =========================================================== */
+.topnav {
+  background: linear-gradient(180deg, #102b46 0%, #1a3a5c 100%);
+  padding: 18px 0;
+  position: sticky;
+  top: 72px;
+  z-index: 45;
+  box-shadow: 0 4px 12px -8px rgba(0, 0, 0, 0.3);
+}
+.topnav .wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tn-tab {
+  flex: 1;
+  min-width: 120px;
+  max-width: 220px;
+  text-align: center;
+  padding: 14px 18px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  background: transparent;
+  transition: background 0.14s ease, border-color 0.14s ease, transform 0.12s ease;
+}
+.tn-tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+.tn-tab.tn-active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+}
+@media (max-width: 540px) {
+  .topnav { top: 64px; padding: 12px 0; }
+  .tn-tab { font-size: 16px; padding: 10px 12px; min-width: 0; }
+}
+
+/* ===========================================================
+   Doctors grid — two-card layout for sibling docs
+   =========================================================== */
+.doctors-grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 32px;
+}
+.doc-card {
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 12px 32px -22px rgba(8, 70, 61, 0.18);
+}
+.doc-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.doc-info {
+  padding: 18px 20px 20px;
+}
+.doc-card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--c-ink);
+}
+.doc-card .doc-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-green-dark);
+  margin: 0 0 10px;
+}
+.doc-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+}
+@media (min-width: 540px) {
+  .doc-card { grid-template-columns: 160px 1fr; }
+  .doc-info { padding: 22px 24px 24px; }
+}
+
+/* Portrait used as a real-image frame (was SVG placeholder) */
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  display: block;
+}
+
+/* ===========================================================
+   Staff
+   =========================================================== */
+.staff {
+  background: #fff;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+}
+.staff-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) { .staff-grid { grid-template-columns: repeat(3, 1fr); } }
+.staff-card {
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+.staff-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--c-green-dark);
+  letter-spacing: 0.02em;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px -6px rgba(8, 70, 61, 0.3);
+}
+.staff-card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--c-ink);
+}
+.staff-card .staff-role {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin: 0 0 12px;
+}
+.staff-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--c-ink-soft);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ===========================================================
+   Wellness library
+   =========================================================== */
+.library {
+  background: var(--c-cream);
+  border-top: 1px solid var(--c-line);
+}
+.lib-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (min-width: 720px) { .lib-grid { grid-template-columns: repeat(4, 1fr); } }
+.lib-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 22px 16px;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r);
+  text-decoration: none;
+  color: var(--c-ink);
+  transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+}
+.lib-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-green);
+  box-shadow: 0 12px 28px -18px rgba(8, 70, 61, 0.3);
+}
+.lib-ico {
+  font-size: 30px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.lib-card h3 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.lib-card p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+
+/* ===========================================================
+   Reviews (kept from previous design)
    =========================================================== */
 .reviews {
   background: var(--c-cream-2);
@@ -880,47 +1099,24 @@ form.book-form .privacy {
       </div>
     </div>
 
-    <!-- Portrait placeholder — illustrated, not an empty box -->
-    <figure class="portrait" aria-label="Practitioner portrait placeholder">
-      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#e0d4b6"/>
-            <stop offset="100%" stop-color="#c4b48e"/>
-          </linearGradient>
-          <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#ffffff"/>
-            <stop offset="100%" stop-color="#ebe2cd"/>
-          </linearGradient>
-        </defs>
-        <rect width="400" height="500" fill="url(#pbg)"/>
-        <!-- lab coat shoulders -->
-        <path d="M 50 500 Q 50 360 130 320 Q 200 300 270 320 Q 350 360 350 500 Z" fill="url(#coat)"/>
-        <!-- shirt collar -->
-        <path d="M 168 330 L 200 400 L 232 330 L 222 322 L 200 360 L 178 322 Z" fill="#0e6b5e"/>
-        <!-- stethoscope draped around neck -->
-        <path d="M 200 360 Q 175 400 155 430 Q 150 445 160 455" stroke="#1a1d24" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M 200 360 Q 225 400 245 430 Q 250 445 240 455" stroke="#1a1d24" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <circle cx="160" cy="455" r="10" fill="#1a1d24"/>
-        <circle cx="240" cy="455" r="10" fill="#1a1d24"/>
-        <!-- neck -->
-        <rect x="180" y="280" width="40" height="50" rx="6" fill="#d8b08f"/>
-        <!-- head -->
-        <ellipse cx="200" cy="215" rx="68" ry="80" fill="#e8c5a3"/>
-        <!-- hair: salt-and-pepper short -->
-        <path d="M 130 215 Q 130 145 200 130 Q 270 145 270 215 Q 270 188 248 170 Q 220 158 200 160 Q 180 158 152 170 Q 130 188 130 215 Z" fill="#5a5045"/>
-        <path d="M 132 218 Q 200 234 268 218 L 268 222 Q 200 236 132 222 Z" fill="#5a5045" opacity="0.55"/>
-        <!-- subtle glasses hint -->
-        <circle cx="178" cy="218" r="13" stroke="#1a1d24" stroke-width="2" fill="none"/>
-        <circle cx="222" cy="218" r="13" stroke="#1a1d24" stroke-width="2" fill="none"/>
-        <line x1="191" y1="218" x2="209" y2="218" stroke="#1a1d24" stroke-width="2"/>
-        <!-- soft smile shadow -->
-        <path d="M 175 250 Q 200 264 225 250" stroke="#a87d5e" stroke-width="2" fill="none" opacity="0.4"/>
-      </svg>
-      <span class="photo-tag">Dr. Pethtel · placeholder</span>
+    <!-- Real Dr. Donald G. Pethtel photo -->
+    <figure class="portrait" aria-label="Dr. Donald G. Pethtel, DC">
+      <img src="assets/donald1.jpg" alt="Dr. Donald G. Pethtel, DC" />
     </figure>
   </div>
 </section>
+
+<!-- ===========================================================
+     TOP NAV TABS — mirrors original Van Born site menu
+     =========================================================== -->
+<nav class="topnav" aria-label="Section navigation">
+  <div class="wrap">
+    <a href="#top" class="tn-tab tn-active">Home</a>
+    <a href="#about" class="tn-tab">About Us</a>
+    <a href="#library" class="tn-tab">Wellness Library</a>
+    <a href="#contact" class="tn-tab">Patients</a>
+  </div>
+</nav>
 
 <!-- ===========================================================
      CONDITIONS TREATED
@@ -1002,54 +1198,41 @@ form.book-form .privacy {
 </section>
 
 <!-- ===========================================================
-     ABOUT — DR. PETHTEL
+     ABOUT — TWO DOCTORS, REAL BIOS, FAMILY STORY
      =========================================================== -->
 <section class="about" id="about">
   <div class="wrap">
-    <figure class="photo" aria-label="Dr. Donald Pethtel portrait placeholder">
-      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="aboutbg" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#ebe2cd"/>
-            <stop offset="100%" stop-color="#c4b48e"/>
-          </linearGradient>
-        </defs>
-        <rect width="400" height="400" fill="url(#aboutbg)"/>
-        <!-- shoulders / coat -->
-        <path d="M 50 400 Q 50 280 130 250 Q 200 235 270 250 Q 350 280 350 400 Z" fill="#ffffff"/>
-        <path d="M 168 260 L 200 330 L 232 260 L 222 252 L 200 290 L 178 252 Z" fill="#0e6b5e"/>
-        <!-- neck -->
-        <rect x="180" y="220" width="40" height="40" rx="6" fill="#d8b08f"/>
-        <!-- head -->
-        <ellipse cx="200" cy="170" rx="68" ry="78" fill="#e8c5a3"/>
-        <!-- hair -->
-        <path d="M 130 170 Q 130 105 200 92 Q 270 105 270 170 Q 270 145 248 128 Q 220 116 200 118 Q 180 116 152 128 Q 130 145 130 170 Z" fill="#5a5045"/>
-        <!-- glasses -->
-        <circle cx="178" cy="172" r="14" stroke="#1a1d24" stroke-width="2" fill="none"/>
-        <circle cx="222" cy="172" r="14" stroke="#1a1d24" stroke-width="2" fill="none"/>
-        <line x1="192" y1="172" x2="208" y2="172" stroke="#1a1d24" stroke-width="2"/>
-        <!-- friendly smile -->
-        <path d="M 175 205 Q 200 220 225 205" stroke="#a87d5e" stroke-width="2" fill="none" opacity="0.6"/>
-      </svg>
-      <span class="photo-tag">Photo placeholder</span>
-    </figure>
-
     <div>
-      <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">Meet the doctor</p>
-      <h2>Dr. Donald G. Pethtel, <em>DC</em></h2>
+      <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">Meet the doctors</p>
+      <h2>A family practice,<br>for your <em>family.</em></h2>
 
-      <p class="pullquote">"Our mission is to improve your quality of life by correcting the underlying cause of your health problems — and not merely treating the symptoms."</p>
+      <p class="pullquote">"My father opened this clinic in 1968. Three generations of patients later, we're still here — still family-run, still the way he would have done it."</p>
 
-      <p>Dr. Pethtel has been serving the Dearborn Heights community from this clinic on Van Born Road for <strong>over five decades</strong>. His approach is simple: a careful diagnosis, a conservative treatment plan, and the kind of attention you only get from a small family-run practice.</p>
+      <p>Van Born Chiropractic has been a fixture on Van Born Road since <strong>1968</strong>, when the late <strong>Dr. Donald L. Pethtel, D.C., D.A.C.S.</strong> opened the doors. His children — Dr. Renee and Dr. Donald G. — carry on the practice today, joined by a small team that knows most patients by name.</p>
 
-      <p>Chiropractic care without drugs or surgery — for the everyday back pain, the car accident that won't quit, and the patients who've been told they just have to live with it.</p>
+      <p>Both doctors graduated from <strong>Life University in Marietta, Georgia</strong>, the same chiropractic school their father attended. The approach is unchanged: a careful diagnosis, conservative treatment, and the kind of attention you only get from a small family-run practice.</p>
 
-      <div class="creds">
-        <div><span class="l">Doctor of</span><span class="v">Chiropractic</span></div>
-        <div><span class="l">Practice</span><span class="v">Since ~1971</span></div>
-        <div><span class="l">Serving</span><span class="v">Dearborn Heights</span></div>
-        <div><span class="l">Approach</span><span class="v">No drugs, no surgery</span></div>
-      </div>
+      <p>Chiropractic care without drugs or surgery — for everyday back pain, the car accident that won't quit, and the patients who have been told they just have to live with it.</p>
+    </div>
+
+    <div class="doctors-grid">
+      <article class="doc-card">
+        <img src="assets/renee1.jpg" alt="Dr. Renee I. Pethtel, B.S., D.C." />
+        <div class="doc-info">
+          <h3>Dr. Renee I. Pethtel, B.S., D.C.</h3>
+          <p class="doc-title">Pediatric &amp; prenatal specialist</p>
+          <p>A 1996 graduate of Life University. Dr. Renee is trained under the International Chiropractic Pediatric Association and is certified in the Webster Technique for pregnant moms. A member of the Michigan Association of Chiropractors since 1996, she has spent nearly three decades serving Dearborn Heights families.</p>
+        </div>
+      </article>
+
+      <article class="doc-card">
+        <img src="assets/donald1.jpg" alt="Dr. Donald G. Pethtel, DC" />
+        <div class="doc-info">
+          <h3>Dr. Donald G. Pethtel, D.C.</h3>
+          <p class="doc-title">U.S. Marine Corps veteran</p>
+          <p>A 2001 graduate of Life University. Dr. Don served in the Marine Corps before his chiropractic career, which gives him a deep understanding of the physical and mental demands that lead to injury. He previously operated clinics in East Lansing and Austin before bringing his experience home to the family practice.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -1089,30 +1272,142 @@ form.book-form .privacy {
 </section>
 
 <!-- ===========================================================
-     REVIEWS
+     REVIEWS — REAL PATIENT QUOTES, PUBLISHED ON VBC SITE
      =========================================================== -->
 <section class="reviews">
   <div class="wrap">
     <p class="section-eyebrow">What patients say</p>
-    <h2><em>5.0 stars.</em> Six reviews. Forty years of trust.</h2>
+    <h2><em>Three decades</em> of trust, one family at a time.</h2>
+    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 40px;">Real patients, real results. Selected from testimonials published by the clinic.</p>
 
     <div class="review-grid">
       <article class="review">
         <div class="stars">★★★★★</div>
-        <blockquote>"Dr. Pethtel is the only chiropractor I trust with my family. Three generations of us have been coming here."</blockquote>
-        <div class="attr"><strong>— Long-time patient</strong> · Yahoo Local review</div>
+        <blockquote>"I suffered from extreme back pain that hindered activities in my life. After being under the care of Dr. Renee, I am able to function daily without debilitating pain, and I am much more energetic. I highly recommend chiropractic care for improved health and wellness."</blockquote>
+        <div class="attr"><strong>— Angela Bell</strong> · Radiographer</div>
       </article>
+
       <article class="review">
         <div class="stars">★★★★★</div>
-        <blockquote>"After my car accident I thought I'd live with neck pain forever. Three weeks here and I was back to normal."</blockquote>
-        <div class="attr"><strong>— M.K.</strong> · Yelp review</div>
+        <blockquote>"Our family has been coming to see Dr. Renee for 11 years. My husband and I with our three boys started seeing her for allergies, back pain and migraines. We all got very good results. Now I have two more boys to add, one with asthma and one with autism, and their results are amazing."</blockquote>
+        <div class="attr"><strong>— The Jones Family</strong> · 11-year patients</div>
       </article>
+
       <article class="review">
         <div class="stars">★★★★★</div>
-        <blockquote>"Quiet office, no waiting, the doctor actually listens. I cancelled my orthopedic appointment the same week."</blockquote>
-        <div class="attr"><strong>— D.H.</strong> · Yahoo Local review</div>
+        <blockquote>"Within my first adjustment my neck began to turn and my back actually felt better. After a couple of weeks I had full range of motion and no pain. To me, it was a miracle. Dr. Renee keeps me pain free so I am able to work."</blockquote>
+        <div class="attr"><strong>— Vicky Hall</strong> · Cleaning Business Owner</div>
+      </article>
+
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Before coming to see Dr. Renee, I suffered from a pinched nerve in my neck. My family physician prescribed muscle relaxers and told me that was all she could do for me. After continuously seeing Dr. Renee, I am pain free and have been so for over a year now."</blockquote>
+        <div class="attr"><strong>— Joann Sadler</strong> · Nursing student</div>
+      </article>
+
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I limped into the clinic 2½ months ago. Now I am pain free almost all day every day. I used to think before getting out of bed, 'okay, what hurts the most this morning.' A month ago I said, 'nothing hurts this morning.'"</blockquote>
+        <div class="attr"><strong>— John Crute</strong> · long-time patient</div>
+      </article>
+
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>"After just a couple of adjustments, not only was my hip pain gone, but also so was the pain my specialist hadn't been able to resolve. Many tests and drugs later, the pain just got worse — until I tried chiropractic."</blockquote>
+        <div class="attr"><strong>— Michael Stiles</strong> · Postal Worker</div>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     STAFF — REAL NAMES, REAL ROLES
+     =========================================================== -->
+<section class="staff">
+  <div class="wrap">
+    <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">Meet the team</p>
+    <h2>The people who answer <em>the phone</em>.</h2>
+    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 50px;">A small, long-tenured staff that knows most patients by name. You'll see the same faces every visit.</p>
+
+    <div class="staff-grid">
+      <article class="staff-card">
+        <div class="staff-avatar" data-initial="JC" style="background: linear-gradient(160deg, #c4b48e, #e0d4b6);"></div>
+        <h3>Jane Carroll</h3>
+        <p class="staff-role">Reception &amp; scheduling</p>
+        <p>30+ years in the medical field working as a receptionist, scribe, and transcriptionist. "I am so grateful to be a part of the Van Born Chiropractic family. I look forward to helping our patients achieve better health."</p>
+      </article>
+
+      <article class="staff-card">
+        <div class="staff-avatar" data-initial="SJ" style="background: linear-gradient(160deg, #d8c8a4, #ebe2cd);"></div>
+        <h3>Sam Jernigan</h3>
+        <p class="staff-role">Licensed Massage Therapist &amp; Esthetician</p>
+        <p>Specializes in therapeutic massage and recovery support for chiropractic patients. "Chiropractic care and massage therapy are the most effective ways to relieve discomfort and support recovery."</p>
+      </article>
+
+      <article class="staff-card">
+        <div class="staff-avatar" data-initial="LK" style="background: linear-gradient(160deg, #b8a888, #d8c8a4);"></div>
+        <h3>Laurie (Loretta) Klapko</h3>
+        <p class="staff-role">Patient support</p>
+        <p>Passionate about working in healthcare and helping patients on their journey to better health. "I truly enjoy helping patients on their journey to better health."</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     WELLNESS LIBRARY — MIRRORS ORIGINAL MENU
+     =========================================================== -->
+<section class="library" id="library">
+  <div class="wrap">
+    <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">Wellness library</p>
+    <h2>Answers to the <em>questions</em> you have.</h2>
+    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:36em; margin: 0 0 50px;">Plain-language articles from the clinic's wellness library. Click any body area or topic to learn more.</p>
+
+    <div class="lib-grid">
+      <a class="lib-card" href="#">
+        <div class="lib-ico">🦴</div>
+        <h3>Back &amp; spine</h3>
+        <p>Lower back pain · Disc problems · Scoliosis · Muscle spasm</p>
+      </a>
+      <a class="lib-card" href="#">
+        <div class="lib-ico">🧠</div>
+        <h3>Head &amp; neck</h3>
+        <p>Headaches · Migraines · Concussion · Vertigo · Earache</p>
+      </a>
+      <a class="lib-card" href="#">
+        <div class="lib-ico">🦵</div>
+        <h3>Legs &amp; feet</h3>
+        <p>Sciatica · Plantar fasciitis · Knee pain · Joint pain</p>
+      </a>
+      <a class="lib-card" href="#">
+        <div class="lib-ico">✋</div>
+        <h3>Arms &amp; hands</h3>
+        <p>Carpal tunnel · Arthritis · Numbness · Arm pain</p>
+      </a>
+      <a class="lib-card" href="#">
+        <div class="lib-ico">🫁</div>
+        <h3>Allergies &amp; asthma</h3>
+        <p>Breathing · Sinusitis · Allergies · Lung health</p>
+      </a>
+      <a class="lib-card" href="#">
+        <div class="lib-ico">❤️</div>
+        <h3>Heart &amp; blood pressure</h3>
+        <p>Hypertension · Fibrillation · Circulation</p>
+      </a>
+      <a class="lib-card" href="#">
+        <div class="lib-ico">🤰</div>
+        <h3>Pregnancy &amp; pediatric</h3>
+        <p>Webster Technique · Newborn care · Colic · Childhood wellness</p>
+      </a>
+      <a class="lib-card" href="#">
+        <div class="lib-ico">🚗</div>
+        <h3>Auto &amp; work injuries</h3>
+        <p>Whiplash · Workplace injuries · Workers' comp</p>
+      </a>
+    </div>
+    <p style="text-align:center; margin-top: 36px; font-size: 14px; color: var(--c-muted);">
+      See something specific? <a href="tel:+13132911060" style="color: var(--c-green-dark); font-weight: 700;">Call (313) 291-1060</a> and we'll point you to the right article.
+    </p>
   </div>
 </section>
 
