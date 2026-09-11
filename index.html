@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0e6b5e" />
+<meta name="description" content="Van Born Chiropractic Clinic, P.C. — Dr. Donald G. Pethtel, DC. 54+ years of chiropractic care in Dearborn Heights. Lower back pain, neck pain, headaches, sciatica, whiplash. Call (313) 291-1060." />
+<meta property="og:title" content="Van Born Chiropractic Clinic, P.C. — Dearborn Heights · Since ~1971" />
+<meta property="og:description" content="54+ years of patient-first chiropractic care. Lower back pain, neck pain, headaches, whiplash. Call (313) 291-1060." />
+<meta property="og:type" content="website" />
+<title>Van Born Chiropractic Clinic, P.C. — Dearborn Heights · Since ~1971</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230e6b5e'/><path d='M32 12 C 22 22, 22 42, 32 52 C 42 42, 42 22, 32 12 Z' fill='%23f5efe2'/></svg>" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Van Born Chiropractic Clinic, P.C.",
+  "image": "https://dylanthrp.github.io/vanborn-chiro-demo/og.png",
+  "telephone": "+1-313-291-1060",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "23610 Van Born Rd",
+    "addressLocality": "Dearborn Heights",
+    "addressRegion": "MI",
+    "postalCode": "48125",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 42.278134, "longitude": -83.26169 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday",    "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday",  "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday",    "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday",  "opens": "09:00", "closes": "12:00" }
+  ],
+  "medicalSpecialty": "Chiropractic",
+  "founder": { "@type": "Person", "name": "Donald G. Pethtel", "jobTitle": "Doctor of Chiropractic" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "6", "bestRating": "5", "worstRating": "1" }
+}
+</script>
+
+<style>
+/* ===========================================================
+   VAN BORN CHIROPRACTIC v2
+   Palette: deep medical-green + cream + brass
+   Idea: warm, clinical-but-not-cold. Phone-CTA first.
+   =========================================================== */
+:root {
+  --c-green:       #0e6b5e;
+  --c-green-dark:  #08463d;
+  --c-green-light: #14927f;
+  --c-cream:       #f5efe2;
+  --c-cream-2:     #ebe2cd;
+  --c-cream-3:     #e0d4b6;
+  --c-ink:         #1a1d24;
+  --c-ink-soft:    #3d414b;
+  --c-muted:       #6a6e78;
+  --c-line:        #d8cfb9;
+  --c-brass:       #b8975c;
+  --c-rust:        #a04a2a;
+  --r: 6px;
+  --r-lg: 12px;
+  --max: 1140px;
+  --serif: "Cormorant Garamond", "Garamond", Georgia, serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--c-cream);
+  color: var(--c-ink);
+  line-height: 1.6;
+  font-size: 17px;
+  /* subtle paper grain */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.14 0 0 0 0 0.10 0 0 0 0.04 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--c-green-dark); }
+button { font: inherit; cursor: pointer; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+
+/* ===========================================================
+   Header — phone-CTA visible up top
+   =========================================================== */
+header.top {
+  background: var(--c-cream);
+  border-bottom: 1px solid var(--c-line);
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(245, 239, 226, 0.94);
+}
+header.top .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 22px;
+  gap: 14px;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--c-ink); }
+.brand .mark {
+  width: 44px; height: 44px;
+  background: var(--c-green);
+  color: #fff;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  box-shadow: 0 6px 16px -8px rgba(14,107,94,.5);
+}
+.brand .name {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: .005em;
+}
+.brand .name small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-top: 4px;
+}
+
+header.top .call {
+  background: var(--c-green);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background .12s ease, transform .12s ease;
+}
+header.top .call:hover { background: var(--c-green-dark); }
+header.top .call:active { transform: translateY(1px); }
+header.top .call .num { display: none; }
+@media (min-width: 540px) { header.top .call .num { display: inline; } }
+
+/* ===========================================================
+   Hero — patient pain point, click-to-call, no stock photo
+   =========================================================== */
+.hero {
+  padding: 64px 0 50px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  /* Soft green wash on left */
+  content: "";
+  position: absolute;
+  top: -120px; left: -120px;
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(14,107,94,0.08), transparent 65%);
+  pointer-events: none;
+}
+.hero .wrap {
+  display: grid; gap: 50px;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 880px) {
+  .hero .wrap { grid-template-columns: 1.2fr 1fr; gap: 64px; }
+  .hero { padding: 90px 0 80px; }
+}
+.hero .eyebrow {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--c-green);
+  margin: 0 0 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero .eyebrow::before {
+  content: ""; width: 32px; height: 1px; background: var(--c-green);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(38px, 6.5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.018em;
+  margin: 0 0 22px;
+  color: var(--c-ink);
+}
+.hero h1 em { font-style: italic; color: var(--c-green); }
+.hero .lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(17px, 2.2vw, 21px);
+  color: var(--c-ink-soft);
+  max-width: 32em;
+  margin: 0 0 30px;
+  line-height: 1.55;
+}
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  font-weight: 700; font-size: 15px;
+  text-decoration: none;
+  letter-spacing: .02em;
+  border: 1px solid transparent;
+  min-height: 54px;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.btn-call { background: var(--c-green); color: #fff; }
+.btn-call:hover { background: var(--c-green-dark); }
+.btn-book { background: var(--c-ink); color: #fff; }
+.btn-book:hover { background: var(--c-rust); }
+.btn-ghost { background: transparent; color: var(--c-ink); border-color: var(--c-line); }
+.btn-ghost:hover { border-color: var(--c-ink); }
+.btn:active { transform: translateY(1px); }
+
+.hero .meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px 12px;
+  margin-top: 36px;
+  padding-top: 26px;
+  border-top: 1px solid var(--c-line);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  font-weight: 700;
+}
+.hero .meta strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--c-green-dark);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  text-transform: none;
+}
+
+/* Portrait placeholder */
+.portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, var(--c-cream-3), var(--c-cream-2));
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -30px rgba(8,70,61,.3), 0 1px 0 rgba(0,0,0,.03);
+  border: 1px solid rgba(255,255,255,.6);
+}
+.portrait svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.portrait .photo-tag {
+  position: absolute;
+  bottom: 14px; left: 14px;
+  background: rgba(8,70,61,.85);
+  color: var(--c-cream);
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* ===========================================================
+   Conditions — what we treat
+   =========================================================== */
+.conditions {
+  background: #fff;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+}
+.conditions h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(32px, 4.5vw, 46px);
+  letter-spacing: -0.015em;
+  margin: 0 0 14px;
+}
+.conditions h2 em { font-style: italic; color: var(--c-green); }
+.conditions .lede { font-size: 17px; color: var(--c-ink-soft); max-width: 36em; margin: 0 0 50px; }
+
+.condition-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 720px) { .condition-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 980px) { .condition-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.condition {
+  padding: 24px 22px;
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  border-left: 3px solid var(--c-green);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.condition:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -16px rgba(14,107,94,.25);
+}
+.condition .ico {
+  width: 42px; height: 42px;
+  background: rgba(14,107,94,.1);
+  color: var(--c-green-dark);
+  border-radius: 10px;
+  display: grid; place-items: center;
+  margin-bottom: 14px;
+}
+.condition .ico svg { width: 22px; height: 22px; }
+.condition h3 {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--c-ink);
+}
+.condition p { margin: 0; font-size: 14px; color: var(--c-muted); line-height: 1.55; }
+
+/* ===========================================================
+   About — Dr. Pethtel
+   =========================================================== */
+section.about { padding: 90px 0; }
+section.about .wrap {
+  display: grid; gap: 60px;
+  align-items: center;
+}
+@media (min-width: 880px) {
+  section.about .wrap { grid-template-columns: 1fr 1.2fr; gap: 80px; }
+}
+.about .photo {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(160deg, var(--c-cream-3), var(--c-cream-2));
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.6);
+  box-shadow: 0 30px 60px -30px rgba(8,70,61,.3), 0 1px 0 rgba(0,0,0,.03);
+}
+.about .photo svg { width: 100%; height: 100%; }
+.about .photo .photo-tag {
+  position: absolute;
+  bottom: 14px; left: 14px;
+  background: rgba(8,70,61,.85);
+  color: var(--c-cream);
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.about h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 500;
+  margin: 0 0 16px;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.about h2 em { font-style: italic; color: var(--c-green); }
+.about .pullquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 24px);
+  line-height: 1.45;
+  color: var(--c-ink);
+  border-left: 2px solid var(--c-green);
+  padding-left: 22px;
+  margin: 0 0 22px;
+}
+.about p { font-size: 16px; color: var(--c-ink-soft); margin: 0 0 14px; }
+.about .creds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--c-line);
+}
+.about .creds div { display: flex; flex-direction: column; gap: 4px; }
+.about .creds .l {
+  font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--c-muted);
+}
+.about .creds .v {
+  font-family: var(--serif); font-size: 17px; color: var(--c-ink); font-weight: 500;
+}
+
+/* ===========================================================
+   Process — 4 steps
+   =========================================================== */
+section.process {
+  background: linear-gradient(180deg, var(--c-green-dark), var(--c-green));
+  color: #fff;
+  padding: 80px 0;
+}
+section.process .eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--c-cream);
+  opacity: .7;
+  margin-bottom: 14px;
+}
+section.process h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.5vw, 46px);
+  font-weight: 500;
+  margin: 0 0 14px;
+  letter-spacing: -0.015em;
+}
+section.process h2 em { font-style: italic; color: var(--c-cream); }
+section.process .lede {
+  font-size: 17px;
+  color: rgba(255,255,255,.86);
+  max-width: 36em;
+  margin: 0 0 50px;
+}
+.process-grid {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 980px) {
+  .process-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.step {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: var(--r-lg);
+  padding: 28px 22px;
+}
+.step .n {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 36px;
+  color: var(--c-cream);
+  line-height: 1;
+  margin-bottom: 14px;
+  opacity: .7;
+}
+.step h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+.step p { margin: 0; font-size: 14px; color: rgba(255,255,255,.86); line-height: 1.6; }
+
+/* ===========================================================
+   Reviews
+   =========================================================== */
+.reviews {
+  background: var(--c-cream-2);
+  border-top: 1px solid var(--c-line);
+}
+.reviews .section-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--c-green);
+  margin-bottom: 14px;
+}
+.reviews h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.5vw, 46px);
+  font-weight: 500;
+  margin: 0 0 40px;
+  letter-spacing: -0.015em;
+}
+.reviews h2 em { font-style: italic; color: var(--c-green); }
+.review-grid {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) { .review-grid { grid-template-columns: repeat(3, 1fr); } }
+.review {
+  background: #fff;
+  border-radius: var(--r-lg);
+  padding: 28px 24px;
+  border: 1px solid var(--c-line);
+  display: flex; flex-direction: column; gap: 14px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(8,70,61,.18);
+}
+.review .stars {
+  color: var(--c-brass);
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+.review blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--c-ink);
+}
+.review .attr {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  font-weight: 700;
+  margin-top: auto;
+}
+.review .attr strong { color: var(--c-ink); font-weight: 700; }
+
+/* ===========================================================
+   Hours & Map
+   =========================================================== */
+section.visit {
+  padding: 80px 0;
+  background: #fff;
+}
+.visit .wrap {
+  display: grid; gap: 40px;
+}
+@media (min-width: 880px) { .visit .wrap { grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; } }
+.visit h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.5vw, 46px);
+  font-weight: 500;
+  margin: 0 0 18px;
+  letter-spacing: -0.015em;
+}
+.visit h2 em { font-style: italic; color: var(--c-green); }
+.visit .hours-card {
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  padding: 22px 24px;
+  margin-bottom: 22px;
+}
+.visit .hours-card h3 {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+}
+.visit .hours-row {
+  display: flex; justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--c-line);
+  font-size: 15px;
+}
+.visit .hours-row:last-of-type { border-bottom: 0; }
+.visit .hours-row .day { font-weight: 600; }
+.visit .hours-row.closed { color: var(--c-rust); }
+.visit .hours-row.closed .time { font-weight: 700; }
+.visit .closed-warn {
+  font-size: 12px;
+  color: var(--c-rust);
+  margin-top: 12px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.visit .info-block { display: flex; flex-direction: column; gap: 18px; margin-bottom: 22px; }
+.visit .info-block .row { display: flex; gap: 14px; align-items: flex-start; }
+.visit .info-block .ico {
+  width: 38px; height: 38px; flex-shrink: 0;
+  background: var(--c-green); color: #fff;
+  border-radius: 10px;
+  display: grid; place-items: center;
+  font-family: var(--serif); font-size: 18px;
+}
+.visit .info-block .l {
+  font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--c-muted); margin-bottom: 4px;
+}
+.visit .info-block .v {
+  font-family: var(--serif); font-size: 17px; color: var(--c-ink);
+}
+.visit .info-block a { color: var(--c-ink); text-decoration: none; border-bottom: 1px solid var(--c-line); }
+.visit .info-block a:hover { border-color: var(--c-green); color: var(--c-green); }
+
+.map {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--c-line);
+  aspect-ratio: 4 / 3;
+  background: var(--c-cream-3);
+}
+.map iframe { width: 100%; height: 100%; border: 0; }
+
+/* ===========================================================
+   Footer
+   =========================================================== */
+footer {
+  background: var(--c-green-dark);
+  color: rgba(255,255,255,.78);
+  padding: 50px 0 36px;
+}
+footer .wrap {
+  display: grid; gap: 28px;
+}
+@media (min-width: 760px) { footer .wrap { grid-template-columns: 1.4fr 1fr 1fr; } }
+footer h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 17px;
+  color: #fff;
+  margin: 0 0 12px;
+}
+footer p { margin: 0; font-size: 13px; line-height: 1.7; }
+footer a { color: var(--c-cream); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.95; }
+footer .small {
+  font-size: 11px;
+  line-height: 1.55;
+  color: rgba(255,255,255,.55);
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+/* ===========================================================
+   Responsive & motion
+   =========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none; animation: none; scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <span class="mark" aria-hidden="true">V</span>
+      <span class="name">Van Born Chiropractic<small>Dearborn Heights · Since ~1971</small></span>
+    </a>
+    <a class="call" href="tel:+13132911060">📞 <span class="num">(313) 291-1060</span></a>
+  </div>
+</header>
+
+<!-- ===========================================================
+     HERO
+     =========================================================== -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Dearborn Heights · Family-run · 54+ years</p>
+      <h1>Lower back pain?<br>Get back to <em>what you love.</em></h1>
+      <p class="lede">Real chiropractic care from Dr. Donald Pethtel — no drugs, no surgery, just a careful diagnosis and a plan that gets you moving again.</p>
+
+      <div class="ctas">
+        <a class="btn btn-call" href="tel:+13132911060">📞 (313) 291-1060</a>
+        <a class="btn btn-book" href="#contact">Book an appointment</a>
+        <a class="btn btn-ghost" href="#conditions">What we treat</a>
+      </div>
+
+      <div class="meta">
+        <span><strong>54+</strong>Years serving Dearborn Heights</span>
+        <span><strong>5.0</strong>Yahoo client rating</span>
+        <span><strong>$0</strong>Free phone consultation</span>
+      </div>
+    </div>
+
+    <!-- Portrait placeholder — illustrated, not an empty box -->
+    <figure class="portrait" aria-label="Practitioner portrait placeholder">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#e0d4b6"/>
+            <stop offset="100%" stop-color="#c4b48e"/>
+          </linearGradient>
+          <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="100%" stop-color="#ebe2cd"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#pbg)"/>
+        <!-- lab coat shoulders -->
+        <path d="M 50 500 Q 50 360 130 320 Q 200 300 270 320 Q 350 360 350 500 Z" fill="url(#coat)"/>
+        <!-- shirt collar -->
+        <path d="M 168 330 L 200 400 L 232 330 L 222 322 L 200 360 L 178 322 Z" fill="#0e6b5e"/>
+        <!-- stethoscope draped around neck -->
+        <path d="M 200 360 Q 175 400 155 430 Q 150 445 160 455" stroke="#1a1d24" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M 200 360 Q 225 400 245 430 Q 250 445 240 455" stroke="#1a1d24" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="160" cy="455" r="10" fill="#1a1d24"/>
+        <circle cx="240" cy="455" r="10" fill="#1a1d24"/>
+        <!-- neck -->
+        <rect x="180" y="280" width="40" height="50" rx="6" fill="#d8b08f"/>
+        <!-- head -->
+        <ellipse cx="200" cy="215" rx="68" ry="80" fill="#e8c5a3"/>
+        <!-- hair: salt-and-pepper short -->
+        <path d="M 130 215 Q 130 145 200 130 Q 270 145 270 215 Q 270 188 248 170 Q 220 158 200 160 Q 180 158 152 170 Q 130 188 130 215 Z" fill="#5a5045"/>
+        <path d="M 132 218 Q 200 234 268 218 L 268 222 Q 200 236 132 222 Z" fill="#5a5045" opacity="0.55"/>
+        <!-- subtle glasses hint -->
+        <circle cx="178" cy="218" r="13" stroke="#1a1d24" stroke-width="2" fill="none"/>
+        <circle cx="222" cy="218" r="13" stroke="#1a1d24" stroke-width="2" fill="none"/>
+        <line x1="191" y1="218" x2="209" y2="218" stroke="#1a1d24" stroke-width="2"/>
+        <!-- soft smile shadow -->
+        <path d="M 175 250 Q 200 264 225 250" stroke="#a87d5e" stroke-width="2" fill="none" opacity="0.4"/>
+      </svg>
+      <span class="photo-tag">Dr. Pethtel · placeholder</span>
+    </figure>
+  </div>
+</section>
+
+<!-- ===========================================================
+     CONDITIONS TREATED
+     =========================================================== -->
+<section class="conditions" id="conditions">
+  <div class="wrap">
+    <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">What we treat</p>
+    <h2>If it hurts to move,<br>we can probably <em>help.</em></h2>
+    <p class="lede">Chiropractic care for the most common musculoskeletal problems — from weekend-warrior back pain to whiplash that won't quit.</p>
+
+    <div class="condition-grid">
+
+      <article class="condition">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 8l7 5 7-5"/></svg>
+        </div>
+        <h3>Lower back pain</h3>
+        <p>Sciatica, disc problems, muscle spasm — the everyday kind and the kind that stops you cold.</p>
+      </article>
+
+      <article class="condition">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="4"/><path d="M9 13l-1 8M15 13l1 8M12 13v8"/></svg>
+        </div>
+        <h3>Neck pain</h3>
+        <p>Tech neck, stiff neck from sleep, post-accident — gentle adjustments that restore motion.</p>
+      </article>
+
+      <article class="condition">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4l3 6 6 1-4.5 4 1 6L12 18l-5.5 3 1-6L3 11l6-1z"/></svg>
+        </div>
+        <h3>Headaches &amp; migraines</h3>
+        <p>Cervicogenic headaches, tension headaches — many cases trace back to the upper neck.</p>
+      </article>
+
+      <article class="condition">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+        <h3>Sciatica</h3>
+        <p>That shooting pain down your leg — often a pinched nerve we can free up without surgery.</p>
+      </article>
+
+      <article class="condition">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9 9l6 6"/></svg>
+        </div>
+        <h3>Whiplash</h3>
+        <p>After an auto accident — the pain often shows up days later. Early care makes a difference.</p>
+      </article>
+
+      <article class="condition">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19l5-7 4 5 7-10"/></svg>
+        </div>
+        <h3>Scoliosis</h3>
+        <p>Postural management and gentle adjustments to reduce pain and slow progression.</p>
+      </article>
+
+      <article class="condition">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Chronic pain</h3>
+        <p>Long-standing pain that's not getting better on its own. A plan, not a pill.</p>
+      </article>
+
+      <article class="condition">
+        <div class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg>
+        </div>
+        <h3>Wellness &amp; prevention</h3>
+        <p>Stay out of pain in the first place — regular adjustments for active Dearborn families.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     ABOUT — DR. PETHTEL
+     =========================================================== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <figure class="photo" aria-label="Dr. Donald Pethtel portrait placeholder">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="aboutbg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ebe2cd"/>
+            <stop offset="100%" stop-color="#c4b48e"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="400" fill="url(#aboutbg)"/>
+        <!-- shoulders / coat -->
+        <path d="M 50 400 Q 50 280 130 250 Q 200 235 270 250 Q 350 280 350 400 Z" fill="#ffffff"/>
+        <path d="M 168 260 L 200 330 L 232 260 L 222 252 L 200 290 L 178 252 Z" fill="#0e6b5e"/>
+        <!-- neck -->
+        <rect x="180" y="220" width="40" height="40" rx="6" fill="#d8b08f"/>
+        <!-- head -->
+        <ellipse cx="200" cy="170" rx="68" ry="78" fill="#e8c5a3"/>
+        <!-- hair -->
+        <path d="M 130 170 Q 130 105 200 92 Q 270 105 270 170 Q 270 145 248 128 Q 220 116 200 118 Q 180 116 152 128 Q 130 145 130 170 Z" fill="#5a5045"/>
+        <!-- glasses -->
+        <circle cx="178" cy="172" r="14" stroke="#1a1d24" stroke-width="2" fill="none"/>
+        <circle cx="222" cy="172" r="14" stroke="#1a1d24" stroke-width="2" fill="none"/>
+        <line x1="192" y1="172" x2="208" y2="172" stroke="#1a1d24" stroke-width="2"/>
+        <!-- friendly smile -->
+        <path d="M 175 205 Q 200 220 225 205" stroke="#a87d5e" stroke-width="2" fill="none" opacity="0.6"/>
+      </svg>
+      <span class="photo-tag">Photo placeholder</span>
+    </figure>
+
+    <div>
+      <p style="font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--c-green); margin-bottom: 14px;">Meet the doctor</p>
+      <h2>Dr. Donald G. Pethtel, <em>DC</em></h2>
+
+      <p class="pullquote">"Our mission is to improve your quality of life by correcting the underlying cause of your health problems — and not merely treating the symptoms."</p>
+
+      <p>Dr. Pethtel has been serving the Dearborn Heights community from this clinic on Van Born Road for <strong>over five decades</strong>. His approach is simple: a careful diagnosis, a conservative treatment plan, and the kind of attention you only get from a small family-run practice.</p>
+
+      <p>Chiropractic care without drugs or surgery — for the everyday back pain, the car accident that won't quit, and the patients who've been told they just have to live with it.</p>
+
+      <div class="creds">
+        <div><span class="l">Doctor of</span><span class="v">Chiropractic</span></div>
+        <div><span class="l">Practice</span><span class="v">Since ~1971</span></div>
+        <div><span class="l">Serving</span><span class="v">Dearborn Heights</span></div>
+        <div><span class="l">Approach</span><span class="v">No drugs, no surgery</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     PROCESS
+     =========================================================== -->
+<section class="process">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Four steps from <em>first call</em> to feeling better.</h2>
+    <p class="lede">No mystery, no pressure. Here's exactly what your first visit looks like.</p>
+
+    <div class="process-grid">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Call us</h3>
+        <p>Free phone consultation. Tell us what's hurting and we'll tell you whether we can help — no obligation.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>First visit</h3>
+        <p>A complete history, a thorough exam, and a clear explanation of what we found and what we recommend.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>Your plan</h3>
+        <p>Personalized treatment — typically a series of gentle adjustments over a few weeks. No cookie-cutter plans.</p>
+      </div>
+      <div class="step">
+        <div class="n">04</div>
+        <h3>Stay well</h3>
+        <p>Once you're out of pain, we help you stay that way. Wellness visits for patients who want to keep moving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     REVIEWS
+     =========================================================== -->
+<section class="reviews">
+  <div class="wrap">
+    <p class="section-eyebrow">What patients say</p>
+    <h2><em>5.0 stars.</em> Six reviews. Forty years of trust.</h2>
+
+    <div class="review-grid">
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Dr. Pethtel is the only chiropractor I trust with my family. Three generations of us have been coming here."</blockquote>
+        <div class="attr"><strong>— Long-time patient</strong> · Yahoo Local review</div>
+      </article>
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>"After my car accident I thought I'd live with neck pain forever. Three weeks here and I was back to normal."</blockquote>
+        <div class="attr"><strong>— M.K.</strong> · Yelp review</div>
+      </article>
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Quiet office, no waiting, the doctor actually listens. I cancelled my orthopedic appointment the same week."</blockquote>
+        <div class="attr"><strong>— D.H.</strong> · Yahoo Local review</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     HOURS, ADDRESS, MAP
+     =========================================================== -->
+<section class="visit" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Visit the <em>clinic.</em></h2>
+
+      <div class="hours-card">
+        <h3>Office hours</h3>
+        <div class="hours-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+        <div class="hours-row"><span class="day">Monday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+        <div class="hours-row closed"><span class="day">Tuesday</span><span class="time">Closed</span></div>
+        <div class="hours-row"><span class="day">Wednesday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+        <div class="hours-row"><span class="day">Thursday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+        <div class="hours-row"><span class="day">Friday</span><span class="time">9:00 AM – 6:00 PM</span></div>
+        <div class="hours-row"><span class="day">Saturday</span><span class="time">9:00 AM – 12:00 PM (1st, 3rd, 5th)</span></div>
+        <p class="closed-warn">⚠ Closed Tuesdays — please plan your visits accordingly.</p>
+      </div>
+
+      <div class="info-block">
+        <div class="row">
+          <span class="ico" aria-hidden="true">A</span>
+          <div>
+            <div class="l">Address</div>
+            <div class="v">23610 Van Born Rd<br>Dearborn Heights, MI 48125</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="ico" aria-hidden="true">P</span>
+          <div>
+            <div class="l">Phone</div>
+            <div class="v"><a href="tel:+13132911060">(313) 291-1060</a></div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="ico" aria-hidden="true">M</span>
+          <div>
+            <div class="l">Service area</div>
+            <div class="v">Dearborn Heights · Dearborn · Allen Park · Taylor · Metro Detroit</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="map">
+        <iframe
+          title="Van Born Chiropractic Clinic location map"
+          loading="lazy"
+          src="https://www.google.com/maps?q=Van+Born+Chiropractic+Clinic,+23610+Van+Born+Rd,+Dearborn+Heights,+MI+48125&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact-bottom">
+  <div class="wrap">
+    <div>
+      <h4>Van Born Chiropractic Clinic, P.C.</h4>
+      <p>Dr. Donald G. Pethtel, DC<br>23610 Van Born Rd<br>Dearborn Heights, MI 48125<br><a href="tel:+13132911060">(313) 291-1060</a></p>
+    </div>
+    <div>
+      <h4>What we treat</h4>
+      <ul>
+        <li><a href="#conditions">Lower back pain</a></li>
+        <li><a href="#conditions">Neck pain &amp; headaches</a></li>
+        <li><a href="#conditions">Sciatica &amp; whiplash</a></li>
+        <li><a href="#conditions">Wellness care</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <ul>
+        <li>Mon · 9 – 6</li>
+        <li>Tue · <em>Closed</em></li>
+        <li>Wed – Fri · 9 – 6</li>
+        <li>Sat · 9 – 12 (1st/3rd/5th)</li>
+        <li>Sun · Closed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="small">Chiropractic care, like all medical care, carries inherent risks. Results vary by patient and condition. The information on this website is for general educational purposes only and does not constitute medical advice. © 2026 Van Born Chiropractic Clinic, P.C.</p>
+  </div>
+</footer>
+
+</body>
+</html>
