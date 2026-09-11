@@ -1070,12 +1070,32 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
 /* ===========================================================
    CTA strip
    =========================================================== */
-.cta-strip { padding: 60px 0; background: var(--c-green-dark); color: var(--c-cream); }
+.cta-strip { padding: 64px 0; background: var(--c-green-dark); color: #fff; }
 .cta-strip h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(28px, 3.4vw, 38px); margin: 0 0 12px; color: #fff; }
 .cta-strip p { font-size: 17px; line-height: 1.6; margin: 0 0 26px; max-width: 40em; opacity: .92; }
 .cta-strip .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.cta-strip .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff; }
-.cta-strip .btn.ghost:hover { background: rgba(255,255,255,.08); }
+/* Primary CTA on dark strip = cream fill so it never blends with the strip or with the footer */
+.cta-strip .btn.primary, .cta-strip a.btn.primary {
+  background: var(--c-cream);
+  color: var(--c-green-dark);
+  border: 1px solid var(--c-cream);
+  box-shadow: 0 8px 22px -10px rgba(0,0,0,.35);
+  font-weight: 700;
+}
+.cta-strip .btn.primary:hover, .cta-strip a.btn.primary:hover {
+  background: #fff;
+  border-color: #fff;
+}
+/* Ghost (secondary) button keeps the outline treatment, lighter weight */
+.cta-strip .btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.45);
+  color: #fff;
+  font-weight: 600;
+}
+.cta-strip .btn.ghost:hover { background: rgba(255,255,255,.10); border-color: #fff; }
+/* Small inline phone icon in CTA labels */
+.cta-strip .btn .ico { width: 14px; height: 14px; margin-right: 4px; vertical-align: -2px; fill: currentColor; }
 
 /* ===========================================================
    Footer (refined for multi-page)
