@@ -780,25 +780,12 @@ section.connect h2 em { font-style: italic; color: var(--c-green); }
   color: #fff;
 }
 .social-card-icon svg { display: block; }
-.social-card-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .social-card-label {
   font-family: var(--serif);
   font-size: 22px;
   font-weight: 600;
   color: var(--c-ink);
   line-height: 1.15;
-}
-.social-card-handle {
-  font-size: 13.5px;
-  color: var(--c-green-dark);
-  font-weight: 600;
-  letter-spacing: .01em;
-}
-.social-card-meta {
-  font-size: 13px;
-  color: var(--c-ink-soft);
-  margin-top: 4px;
-  line-height: 1.4;
 }
 .social-card-arrow {
   font-size: 22px;
