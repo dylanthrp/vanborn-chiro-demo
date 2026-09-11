@@ -247,15 +247,6 @@ header.top .wrap {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px -16px rgba(14,107,94,.25);
 }
-.condition .ico {
-  width: 42px; height: 42px;
-  background: rgba(14,107,94,.1);
-  color: var(--c-green-dark);
-  border-radius: 10px;
-  display: grid; place-items: center;
-  margin-bottom: 14px;
-}
-.condition .ico svg { width: 22px; height: 22px; }
 .condition h3 {
   font-family: var(--serif);
   font-size: 21px;
