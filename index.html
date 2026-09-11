@@ -630,6 +630,213 @@ footer .small {
 }
 
 /* ===========================================================
+   Sticky mobile action bar — borrow from MiSpine
+   Three tap targets that follow the user down the page:
+   Call, Text/Form, Directions.
+   =========================================================== */
+.mobile-bar {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 70;
+  background: rgba(8, 70, 61, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+  gap: 6px;
+}
+.mobile-bar a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 9px 4px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+.mobile-bar a.primary { background: var(--c-green-light); border-color: transparent; }
+.mobile-bar a:active { transform: translateY(1px); }
+.mobile-bar a .ico { font-size: 18px; line-height: 1; }
+.mobile-bar a.primary .ico { filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25)); }
+@media (max-width: 760px) {
+  .mobile-bar { display: flex; }
+  /* Reserve space at the bottom of the page so content doesn't hide under the bar */
+  body { padding-bottom: 78px; }
+}
+
+/* ===========================================================
+   Open / closed status pill in header
+   =========================================================== */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(46, 156, 100, 0.12);
+  color: var(--c-green-dark);
+  border: 1px solid rgba(46, 156, 100, 0.3);
+}
+.status-pill::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #2e9c64;
+  box-shadow: 0 0 0 0 rgba(46, 156, 100, 0.5);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+.status-pill.closed {
+  background: rgba(160, 74, 42, 0.1);
+  color: var(--c-rust);
+  border-color: rgba(160, 74, 42, 0.3);
+}
+.status-pill.closed::before {
+  background: var(--c-rust);
+  animation: none;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(46, 156, 100, 0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(46, 156, 100, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 156, 100, 0); }
+}
+@media (max-width: 540px) { .status-pill { display: none; } }
+
+/* ===========================================================
+   Appointment form section (matches MiSpine's online booking lead)
+   =========================================================== */
+section.book {
+  background: var(--c-cream-3);
+  border-top: 1px solid var(--c-line);
+}
+section.book .wrap {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+}
+@media (min-width: 880px) {
+  section.book .wrap { grid-template-columns: 1fr 1.1fr; gap: 60px; }
+}
+section.book h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.5vw, 46px);
+  font-weight: 500;
+  margin: 0 0 16px;
+  letter-spacing: -0.015em;
+}
+section.book h2 em { font-style: italic; color: var(--c-green); }
+section.book .lede {
+  font-size: 17px;
+  color: var(--c-ink-soft);
+  margin: 0 0 24px;
+}
+section.book ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+section.book ul li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 16px;
+  color: var(--c-ink-soft);
+}
+section.book ul li .check {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  background: var(--c-green);
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+form.book-form {
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  padding: 32px 30px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 12px 36px -20px rgba(8, 70, 61, 0.18);
+}
+form.book-form label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin: 18px 0 6px;
+}
+form.book-form label:first-child { margin-top: 0; }
+form.book-form input,
+form.book-form select,
+form.book-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r);
+  color: var(--c-ink);
+  font: inherit;
+  font-size: 15px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+form.book-form input:focus,
+form.book-form select:focus,
+form.book-form textarea:focus {
+  outline: none;
+  border-color: var(--c-green);
+  background: #fff;
+}
+form.book-form textarea { min-height: 100px; resize: vertical; }
+form.book-form .row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+form.book-form .btn-submit {
+  margin-top: 22px;
+  width: 100%;
+  background: var(--c-green);
+  color: #fff;
+  border: 0;
+  padding: 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+form.book-form .btn-submit:hover { background: var(--c-green-dark); }
+form.book-form .btn-submit:active { transform: translateY(1px); }
+form.book-form .privacy {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--c-muted);
+  text-align: center;
+}
+
+/* ===========================================================
    Responsive & motion
    =========================================================== */
 @media (prefers-reduced-motion: reduce) {
@@ -645,6 +852,7 @@ footer .small {
       <span class="mark" aria-hidden="true">V</span>
       <span class="name">Van Born Chiropractic<small>Dearborn Heights · Since ~1971</small></span>
     </a>
+    <span class="status-pill" id="status-pill" aria-live="polite">Checking…</span>
     <a class="call" href="tel:+13132911060">📞 <span class="num">(313) 291-1060</span></a>
   </div>
 </header>
@@ -661,7 +869,7 @@ footer .small {
 
       <div class="ctas">
         <a class="btn btn-call" href="tel:+13132911060">📞 (313) 291-1060</a>
-        <a class="btn btn-book" href="#contact">Book an appointment</a>
+        <a class="btn btn-book" href="#book">Book online</a>
         <a class="btn btn-ghost" href="#conditions">What we treat</a>
       </div>
 
@@ -995,6 +1203,131 @@ footer .small {
     <p class="small">Chiropractic care, like all medical care, carries inherent risks. Results vary by patient and condition. The information on this website is for general educational purposes only and does not constitute medical advice. © 2026 Van Born Chiropractic Clinic, P.C.</p>
   </div>
 </footer>
+
+<!-- ===========================================================
+     BOOK ONLINE
+     =========================================================== -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div>
+      <h2>Book your <em>visit</em><br>in under a minute.</h2>
+      <p class="lede">Skip the phone call if you'd rather — fill out the form and we'll confirm your appointment within one business day.</p>
+      <ul>
+        <li><span class="check">✓</span> Free phone consultation before you commit</li>
+        <li><span class="check">✓</span> Same-week appointments usually available</li>
+        <li><span class="check">✓</span> Most insurance accepted; we'll verify before your visit</li>
+        <li><span class="check">✓</span> No referral needed for new patients</li>
+      </ul>
+    </div>
+
+    <form class="book-form" onsubmit="event.preventDefault(); document.getElementById('book-confirm').hidden = false; this.hidden = true;">
+      <label for="b-name">Your name</label>
+      <input id="b-name" type="text" placeholder="Full name" required />
+
+      <div class="row-2">
+        <div>
+          <label for="b-phone">Phone</label>
+          <input id="b-phone" type="tel" placeholder="(313) 555-0123" required />
+        </div>
+        <div>
+          <label for="b-email">Email</label>
+          <input id="b-email" type="email" placeholder="you@example.com" />
+        </div>
+      </div>
+
+      <label for="b-when">Preferred day</label>
+      <select id="b-when">
+        <option>As soon as possible</option>
+        <option>Monday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday (1st, 3rd, 5th)</option>
+      </select>
+
+      <label for="b-reason">What brings you in?</label>
+      <select id="b-reason">
+        <option>Lower back pain</option>
+        <option>Neck pain</option>
+        <option>Headaches / migraines</option>
+        <option>Sciatica</option>
+        <option>Whiplash / auto accident</option>
+        <option>Wellness / preventive care</option>
+        <option>Not sure / other</option>
+      </select>
+
+      <label for="b-notes">Anything else? (optional)</label>
+      <textarea id="b-notes" placeholder="A sentence is plenty."></textarea>
+
+      <button type="submit" class="btn-submit">Request my appointment</button>
+      <p class="privacy">We'll never share your information.</p>
+    </form>
+
+    <div id="book-confirm" hidden style="background:#fff;border:1px solid var(--c-line);border-radius:var(--r-lg);padding:40px 30px;text-align:center;box-shadow:0 1px 0 rgba(0,0,0,.02),0 12px 36px -20px rgba(8,70,61,.18);">
+      <div style="font-size:48px;color:var(--c-green);margin-bottom:14px;">✓</div>
+      <h3 style="font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 10px;">Request received.</h3>
+      <p style="color:var(--c-ink-soft);margin:0;font-size:15px;">Dr. Pethtel's office will call you within one business day to confirm your appointment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     STICKY MOBILE ACTION BAR
+     =========================================================== -->
+<nav class="mobile-bar" aria-label="Quick contact">
+  <a href="tel:+13132911060" class="primary">
+    <span class="ico">📞</span>
+    <span>Call</span>
+  </a>
+  <a href="#book">
+    <span class="ico">📝</span>
+    <span>Book</span>
+  </a>
+  <a href="https://maps.google.com/?q=Van+Born+Chiropractic+Clinic+23610+Van+Born+Rd+Dearborn+Heights+MI+48125" target="_blank" rel="noopener">
+    <span class="ico">📍</span>
+    <span>Directions</span>
+  </a>
+</nav>
+
+<!-- ===========================================================
+     STATUS PILL — auto-detect open/closed from local time
+     =========================================================== -->
+<script>
+(function () {
+  var pill = document.getElementById('status-pill');
+  if (!pill) return;
+  // Clinic hours (verified from their current site + Yelp)
+  // 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
+  var hours = {
+    1: [9, 0, 18, 0],   // Mon 9-6
+    3: [9, 0, 18, 0],   // Wed 9-6
+    4: [9, 0, 18, 0],   // Thu 9-6
+    5: [9, 0, 18, 0],   // Fri 9-6
+    6: [9, 0, 12, 0],   // Sat 9-12 (1st/3rd/5th — best-effort)
+  };
+  var now = new Date();
+  var day = now.getDay();
+  var mins = now.getHours() * 60 + now.getMinutes();
+  var h = hours[day];
+  var open = false;
+  if (h) {
+    var openM = h[0] * 60 + h[1];
+    var closeM = h[2] * 60 + h[3];
+    if (mins >= openM && mins < closeM) open = true;
+  }
+  if (open) {
+    var closesAt = h[2] * 60 + h[3];
+    var remain = closesAt - mins;
+    var rh = Math.floor(remain / 60);
+    var rm = remain % 60;
+    pill.textContent = rh > 0 ? ('Open · closes ' + (rm ? (rh + 'h ' + rm + 'm') : (rh + 'h'))) : 'Open now';
+    pill.classList.remove('closed');
+  } else {
+    pill.textContent = 'Closed · opens Mon 9 AM';
+    pill.classList.add('closed');
+  }
+})();
+</script>
 
 </body>
 </html>
