@@ -1338,7 +1338,7 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
    they don't eat vertical real estate as the user reads. Desktop keeps sticky. */
 @media (max-width: 539px) {
   header.top { position: static; }
-  nav.topnav { position: static; }
+  nav.topnav { position: sticky; top: 0; z-index: 40; }
   header.top .wrap {
     flex-direction: column;
     align-items: stretch;
