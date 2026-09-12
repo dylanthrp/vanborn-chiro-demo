@@ -103,6 +103,24 @@ header.top .wrap {
   background: radial-gradient(circle, rgba(14,107,94,0.08), transparent 65%);
   pointer-events: none;
 }
+.hero::after {
+  /* Layered "treatment-room" backdrop: warm vertical wash + soft window-light circle on the right */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 85% 20%, rgba(255,247,228,0.55), transparent 60%),
+    linear-gradient(180deg, var(--c-cream-2) 0%, #fbf5e5 60%, var(--c-cream-3) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+@media (min-width: 880px) {
+  .hero::after {
+    background:
+      radial-gradient(ellipse 50% 70% at 78% 25%, rgba(255,247,228,0.7), transparent 65%),
+      linear-gradient(180deg, var(--c-cream-2) 0%, #fbf5e5 60%, var(--c-cream-3) 100%);
+  }
+}
 .hero .wrap {
   display: grid; gap: 50px;
   align-items: center;
@@ -196,6 +214,41 @@ header.top .wrap {
   border: 1px solid rgba(255,255,255,.6);
 }
 .portrait svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.portrait .portrait-badge {
+  position: absolute;
+  bottom: 16px; left: 16px; right: 16px;
+  background: rgba(245,239,226,0.96);
+  border: 1px solid var(--c-line);
+  border-left: 3px solid var(--c-green);
+  padding: 10px 14px 11px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  box-shadow: 0 8px 24px -10px rgba(0,0,0,0.18);
+}
+.portrait .portrait-badge .badge-line-1 {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--c-ink);
+  line-height: 1.2;
+}
+.portrait .portrait-badge .badge-line-2 {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--c-green-dark);
+  letter-spacing: .04em;
+  margin-top: 2px;
+}
+.portrait .portrait-badge .badge-line-3 {
+  font-size: 11.5px;
+  color: var(--c-ink-soft);
+  letter-spacing: .02em;
+  margin-top: 2px;
+}
 .portrait .photo-tag {
   position: absolute;
   bottom: 14px; left: 14px;
@@ -255,6 +308,114 @@ header.top .wrap {
   color: var(--c-ink);
 }
 .condition p { margin: 0; font-size: 14px; color: var(--c-muted); line-height: 1.55; }
+.condition-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px;
+  font-size: 13.5px; font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--c-green-dark);
+  text-decoration: none;
+  border-top: 1px solid var(--c-line);
+  padding-top: 12px;
+  width: 100%;
+  transition: color .14s ease, gap .14s ease;
+}
+.condition:hover .condition-link,
+.condition-link:hover { color: var(--c-green); gap: 10px; }
+.condition-link span[aria-hidden] {
+  font-size: 16px;
+  transition: transform .14s ease;
+  display: inline-block;
+}
+.condition-link:hover span[aria-hidden] { transform: translateX(2px); }
+
+.conditions-footnote {
+  margin: 28px 0 0;
+  font-size: 13px;
+  color: var(--c-muted);
+  max-width: 60em;
+  font-style: italic;
+}
+
+/* ===========================================================
+   First Visit — 3-step pathway (cohort staple)
+   =========================================================== */
+.first-visit { padding: 80px 0; background: var(--c-cream-2); border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
+.first-visit .section-eyebrow {
+  font-size: 12px; font-weight: 800;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--c-green);
+  margin-bottom: 18px; padding-bottom: 4px;
+  display: inline-block;
+  border-bottom: 2px solid var(--c-green);
+}
+.first-visit h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  margin: 0 0 16px;
+  letter-spacing: -0.015em;
+  color: var(--c-ink);
+  max-width: 30em;
+}
+.first-visit h2 em { font-style: italic; color: var(--c-green); }
+
+.first-visit-steps {
+  list-style: none; padding: 0; margin: 0 0 32px;
+  display: grid; gap: 18px;
+  grid-template-columns: 1fr;
+  max-width: 64em;
+}
+@media (min-width: 760px) {
+  .first-visit-steps { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+}
+.first-visit-steps li {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-left: 3px solid var(--c-green);
+  border-radius: var(--r-lg);
+  padding: 20px 22px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(8,70,61,.18);
+}
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: var(--c-green);
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 18px; font-weight: 700;
+  flex-shrink: 0;
+}
+.first-visit-steps li h3 {
+  font-family: var(--serif);
+  font-size: 18px; font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--c-ink);
+  line-height: 1.25;
+}
+.first-visit-steps li p {
+  font-size: 14.5px; line-height: 1.55;
+  color: var(--c-ink-soft);
+  margin: 0;
+}
+
+.first-visit-cta {
+  font-size: 16px;
+  color: var(--c-ink);
+  max-width: 60em;
+  margin: 0;
+}
+.first-visit-cta a.phone-link {
+  color: var(--c-green-dark);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--c-green);
+  padding-bottom: 1px;
+  transition: color .14s ease, border-color .14s ease;
+}
+.first-visit-cta a.phone-link:hover { color: var(--c-green); border-bottom-color: var(--c-green-dark); }
 
 /* ===========================================================
    About — Dr. Pethtel
@@ -889,6 +1050,16 @@ footer {
   color: rgba(255,255,255,.78);
   padding: 50px 0 36px;
 }
+footer .footer-mark {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 26px;
+  opacity: 0.18;
+  filter: brightness(1.4) saturate(0.6);
+  transition: opacity .2s ease;
+}
+footer:hover .footer-mark { opacity: 0.32; }
 footer .wrap {
   display: grid; gap: 28px;
 }

@@ -1096,6 +1096,11 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
     <!-- Featured doctor: Dr. Renee I. Pethtel (practice lead) -->
     <figure class="portrait" aria-label="Dr. Renee I. Pethtel, B.S., D.C.">
       <img src="assets/renee-final.jpg" alt="Dr. Renee I. Pethtel, B.S., D.C." width="1122" height="1402" fetchpriority="high" />
+      <figcaption class="portrait-badge">
+        <span class="badge-line-1">Dr. Renee I. Pethtel</span>
+        <span class="badge-line-2">B.S., D.C.</span>
+        <span class="badge-line-3">Life University · 1996</span>
+      </figcaption>
     </figure>
   </div>
 </section>
@@ -1113,6 +1118,42 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
   </nav>
 
 <!-- ===========================================================
+     FIRST VISIT — what to expect (cohort staple: Haywood, Razmik,
+     Stony Brook all have a similar "first visit" pathway).
+     =========================================================== -->
+<section class="first-visit" id="first-visit">
+  <div class="wrap">
+    <p class="section-eyebrow">Your first visit</p>
+    <h2>What to <em>expect.</em></h2>
+    <p class="lede" style="font-size:17px; color:var(--c-ink-soft); max-width:38em; margin: 0 0 36px;">A new-patient appointment at Van Born is a conversation, not a sales pitch. Three things happen, in order.</p>
+    <ol class="first-visit-steps">
+      <li>
+        <span class="step-num" aria-hidden="true">1</span>
+        <div>
+          <h3>You talk, they listen</h3>
+          <p>The first ten minutes are a conversation. Bring your questions, your history, and a list of anything you've tried before. The doctor is interested in the pattern of your pain, not just the spot.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num" aria-hidden="true">2</span>
+        <div>
+          <h3>A focused assessment</h3>
+          <p>A short physical exam: how you move, where it hurts, what relieves it. No full-body X-rays, no pre-paid treatment packages. You'll be told what they found before anything else happens.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num" aria-hidden="true">3</span>
+        <div>
+          <h3>A plan you can take or leave</h3>
+          <p>You'll leave with a written summary of findings and the doctor's recommendations. Whether you continue care at Van Born, with another clinician, or not at all — that's your call. No pressure, no contracts.</p>
+        </div>
+      </li>
+    </ol>
+    <p class="first-visit-cta">To schedule, call <a href="tel:+13132911060" class="phone-link">(313) 291-1060</a>. The front desk knows the doctors' availability and won't push a same-day appointment if the timing isn't right.</p>
+  </div>
+</section>
+
+<!-- ===========================================================
      CONDITIONS TREATED
      =========================================================== -->
 <section class="conditions" id="conditions">
@@ -1126,44 +1167,54 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
       <article class="condition">
         <h3>Lower back pain</h3>
         <p>Sciatica, disc problems, muscle spasm — the everyday kind and the kind that stops you cold.</p>
+        <a class="condition-link" href="library-back.html">Read the library article <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="condition">
         <h3>Neck pain</h3>
         <p>Neck stiffness and discomfort can have different causes. Ask about an assessment.</p>
+        <a class="condition-link" href="library-neck.html">Read the library article <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="condition">
         <h3>Headaches &amp; migraines</h3>
         <p>Headaches have many possible causes. Discuss new or changing symptoms with a clinician.</p>
+        <a class="condition-link" href="library-neck.html">Read the library article <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="condition">
         <h3>Sciatica</h3>
         <p>Pain travelling down the leg needs an assessment to understand its cause and care options.</p>
+        <a class="condition-link" href="library-sciatica.html">Read the library article <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="condition">
         <h3>Whiplash</h3>
         <p>Seek an appropriate medical assessment for neck pain following an auto accident.</p>
+        <a class="condition-link" href="library-neck.html">Read the library article <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="condition">
         <h3>Scoliosis</h3>
         <p>Discuss spinal curvature, discomfort and suitable management options with your clinician.</p>
+        <a class="condition-link" href="library-joints.html">Read the library article <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="condition">
         <h3>Chronic pain</h3>
         <p>Persistent pain may need a broader assessment and an individual approach to management.</p>
+        <a class="condition-link" href="library-joints.html">Read the library article <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="condition">
         <h3>Wellness &amp; prevention</h3>
         <p>Ask about movement, daily habits and care options suited to your health goals.</p>
+        <a class="condition-link" href="library-back.html">Read the library article <span aria-hidden="true">→</span></a>
       </article>
 
     </div>
+
+    <p class="conditions-footnote">All summaries are general information, not medical advice. The clinic's published wellness library is referenced for further reading.</p>
   </div>
 </section>
 
@@ -1492,6 +1543,7 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
 </main>
 <footer id="contact-bottom">
   <div class="wrap">
+    <img class="footer-mark" src="assets/v-monogram-final.png" alt="Van Born Chiropractic monogram" width="96" height="96" aria-hidden="true" />
     <div>
       <h4>Van Born Chiropractic Clinic, P.C.</h4>
       <p>Dr. Renee I. Pethtel &amp; Dr. Donald G. Pethtel<br>Founded in 1968 by the late Dr. Donald L. Pethtel<br>23610 Van Born Rd<br>Dearborn Heights, MI 48125<br><a href="tel:+13132911060">(313) 291-1060</a></p>
