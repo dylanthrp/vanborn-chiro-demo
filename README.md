@@ -1,6 +1,11 @@
-# Van Born Chiropractic portfolio demo
+# Van Born Chiropractic website preview
 
-Static HTML/CSS/JavaScript concept. Not an authorized clinic website or patient intake service.
+Static HTML/CSS/JavaScript design preview. Not an authorized clinic website or patient intake service.
+
+- **previewURL:** https://dylanthrp.github.io/vanborn-chiro-demo/
+- **officialClinicURL:** https://www.vanbornchiropractic.com/
+
+The preview retains `noindex, nofollow` and a readable disclosure on every page. Publishing the preview is not approval to launch as the clinic’s official website.
 
 ## Preview locally
 
@@ -27,7 +32,23 @@ AXE_PATH=/absolute/path/to/node_modules/axe-core/axe.min.js \
 node tests/expert-audit.cjs
 ```
 
-The audit starts a temporary loopback HTTP server, tests four viewport widths, records screenshots/results under `qa/`, and closes the server. To verify an approved release rather than local files, set `AUDIT_URL` to the deployed URL. Source-link checks are read-only; do not submit test messages to the actual clinic.
+The browser audit starts a temporary loopback HTTP server, exercises all 13 pages at 320/390/768/1440 pixels, then repeats reading/FAQ checks without JavaScript. It checks actual navigation, compact sticky mobile tabs, skip links, FAQ keyboard behavior, local-only library search (case/whitespace, empty result, reset/focus), anchors, images, phone links, console errors and network requests. Optional axe checks run on every page at every width. Screenshots/results go to a unique `.hermes/vanborn-polish/audit-*` directory; `AUDIT_OUTPUT` can select another location. Existing QA screenshots are never overwritten by these commands.
+
+To verify the public preview after publication:
+
+```sh
+AUDIT_URL=https://dylanthrp.github.io/vanborn-chiro-demo/ node tests/expert-audit.cjs
+```
+
+Source-link checks cover clinic HTML/PDF links across all root pages and are read-only; do not submit test messages to the actual clinic.
+
+## Patient-facing improvements
+
+Native FAQs answer scheduling, preparation, fees/insurance, hours, privacy and medical-information questions. The six existing library indexes have local-only title search and topic navigation. Without JavaScript the full lists remain readable and the unused search controls stay hidden. No search terms are stored or transmitted by site code.
+
+Design ideas were taken from [DearDoc](https://getdeardoc.com/blog/medical-practice-website-design) and [Officite](https://www.officite.com/9-doctor-website-design-examples-that-attract-patients/): clear doctor introductions, mobile navigation, useful education/FAQs and direct next steps. Chat, fake scheduling, patient portals, compliance badges and unsupported medical promises were deliberately excluded.
+
+Privacy copy distinguishes site behavior from hosting: GitHub Pages may process technical requests, public HTTPS does not imply that local HTTP is encrypted, and external services apply their own policies.
 
 ## Content and launch review
 

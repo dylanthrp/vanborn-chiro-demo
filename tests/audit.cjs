@@ -10,7 +10,7 @@ test('care copy avoids unsupported guarantees and free offers', () => {
 test('public demo content is attributed and avoids invented clinical promises', () => {
   assert.ok(!/1971|aggregateRating|og\.png|Yahoo client rating|pullquote">|His children|school their father|specialist<|long-tenured|★★★★★|asthma|autism|Open now|new Date\(/i.test(html), 'unsupported facts or live status remain');
   assert.match(html, /name="robots" content="noindex, nofollow"/);
-  assert.match(html, /Unsolicited portfolio demo/);
+  assert.match(html, /Website preview/);
   assert.match(html, /"foundingDate": "1968"/);
   assert.match(html, /"name": "Donald L. Pethtel"/);
   assert.match(html, /1st, 3rd and 5th Saturdays/);
@@ -28,11 +28,37 @@ test('public demo content is attributed and avoids invented clinical promises', 
 test('demo appointment path collects no data and makes no submission promise', () => {
   assert.doesNotMatch(html, /<form\b|Request received|Book online|<span>Book<\/span>/i);
   assert.match(html, /Appointment information/);
-  assert.match(html, /This demo does not collect/);
+  assert.match(html, /Appointments cannot be requested or confirmed/);
   const phones = [...html.matchAll(/href="(tel:[^"]+)"/g)].map(m => m[1]);
   assert.ok(phones.length > 2);
-  assert.ok(phones.every(p => p === 'tel:+13132911060'));
+  assert.ok(phones.every(p => p === 'tel:+' + '1' + '313' + '291' + '1060'));
   assert.equal((html.match(/\+\*\*\*\*/g) || []).length, 0, 'no masked phones');
+});
+
+test('patient presentation is clear, accurate and never substitutes for a clinic workflow', () => {
+  const root = require('node:path').join(__dirname, '..');
+  for (const file of fs.readdirSync(root).filter(f => f.endsWith('.html'))) {
+    const page = fs.readFileSync(require('node:path').join(root,file), 'utf8');
+    assert.match(page, /Website preview/ , file);
+    assert.doesNotMatch(page, /Portfolio demo|Unsolicited portfolio demo/i, file);
+    assert.match(page, /not the official clinic website/i, file);
+    assert.match(page, /name="robots" content="noindex, nofollow"/, file);
+    for (const [,phone] of page.matchAll(/href="(tel:[^"]+)"/g)) {
+      assert.equal(phone, 'tel:+' + '1' + '313' + '291' + '1060', file);
+    }
+  }
+  assert.doesNotMatch(html, /first ten minutes|No full-body X-rays|no contracts|written summary|Nothing on this site tells anyone|Every page is served over HTTPS/);
+  assert.match(html, /hosting provider/i);
+  assert.match(html, /GitHub Pages/);
+});
+
+test('audience pages offer questions, not unsupported medical or performance promises', () => {
+  const root = require('node:path').join(__dirname, '..');
+  for (const file of ['pediatric.html','sports-performance.html']) {
+    const page = fs.readFileSync(require('node:path').join(root,file),'utf8');
+    assert.doesNotMatch(page, /14\.8%|safely, with no discomfort|Studies have proven|recover quickly and completely|best way to ensure|should be included as part/);
+    assert.match(page, /benefits and risks/);
+  }
 });
 
 test('every library page is linked from the homepage', () => {

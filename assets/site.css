@@ -1607,3 +1607,43 @@ body[data-page="patients"] .topnav a[data-nav="patients"] {
   color: var(--c-green-dark);
   border-color: rgba(255,255,255,.4);
 }
+
+/* Patient presentation: progressive enhancements and native, keyboard-friendly reading. */
+[hidden] { display: none !important; }
+header.top { position: static; }
+nav.topnav { top: var(--header-height, 0px); background: var(--c-green-dark); }
+@media (min-width: 540px) { html.enhanced header.top { position: sticky; } }
+.demo-banner { background: var(--c-cream-2); color: var(--c-ink-soft); padding: 9px 20px; font-size: 13px; border-bottom: 1px solid var(--c-line); }
+.demo-banner a { color: var(--c-green-dark); }
+.demo-banner :focus-visible { outline-color: var(--c-green-dark); }
+.patient-faq { padding: 72px 0; background: #fff; border-top: 1px solid var(--c-line); }
+.patient-faq .wrap { max-width: 920px; }
+.patient-faq h2 { font: 500 clamp(30px, 4vw, 42px)/1.15 var(--serif); margin: 0 0 18px; }
+.patient-faq .section-eyebrow { color: var(--c-green-dark); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.faq-list { margin-top: 30px; border-top: 1px solid var(--c-line); }
+.faq-list details { border-bottom: 1px solid var(--c-line); }
+.faq-list summary { cursor: pointer; padding: 20px 6px; font-weight: 650; color: var(--c-green-dark); }
+.faq-list details[open] { background: var(--c-cream); }
+.faq-list details p { margin: 0; padding: 0 22px 24px; max-width: 70ch; font-size: 16px; }
+.library-topics { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.library-topics a { padding: 10px 14px; border: 1px solid var(--c-line); border-radius: 999px; font-size: 14px; text-decoration: none; }
+.library-topics a[aria-current] { background: var(--c-green-dark); color: #fff; }
+.library-search { padding: 24px; border: 1px solid var(--c-line); border-radius: var(--r-lg); background: var(--c-cream); margin-bottom: 24px; }
+.library-search label { display: block; font-weight: 700; margin-bottom: 10px; }
+.search-row { display: flex; gap: 10px; }
+.search-row input { flex: 1; min-width: 0; width: 100%; padding: 12px; border: 1px solid var(--c-muted); border-radius: var(--r); font: inherit; background: #fff; color: var(--c-ink); }
+.search-row button { padding: 12px 18px; border: 1px solid var(--c-green-dark); border-radius: var(--r); background: var(--c-green-dark); color: #fff; }
+.library-search p { font-size: 14px; margin: 12px 0 0; }
+#library-results { font-weight: 600; }
+.trust .lede { max-width: 65ch; }
+.trust-card h3 { margin-top: 0; }
+footer .small { font-size: 13px; }
+footer .small a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 539px) {
+  nav.topnav { top: 0; }
+  .search-row { flex-direction: column; }
+  .library-search { padding: 18px; }
+  .patient-faq { padding: 48px 0; }
+  .hero { padding: 40px 0; }
+  .hero .wrap { gap: 32px; }
+}
