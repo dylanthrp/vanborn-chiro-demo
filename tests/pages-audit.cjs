@@ -37,6 +37,7 @@ const PAGES = [
   ['library-carpal.html', []],
   ['library-joints.html', []],
   ['library-foot.html', []],
+  ['anatomy.html', []],
 ];
 
 (async()=>{

@@ -1,23 +1,58 @@
 
 /* ===========================================================
    VAN BORN CHIROPRACTIC v2
-   AUTUMN SKIN 2026-10-05 — revert in March.
-   Palette: deep auburn + cream + ochre + warm rust
-   Idea: same warm clinical feel, fall palette. CSS-only.
+   AUTUMN THEME 2026-10-06 — revert in March.
+   The brand palette is preserved in `.theme-brand` below. To revert,
+   remove `class="theme-autumn"` from <body> in each HTML file (or replace
+   it with `class="theme-brand"`). The base structure, copy, phone and
+   schema are unchanged.
+
+   Themes:
+     .theme-brand  — original green/cream/brass (preserved, currently inactive)
+     .theme-autumn — subtle autumn accent (currently active on <body>)
    =========================================================== */
+
+/* ----- BRAND PALETTE — preserved, currently inactive ----- */
+.theme-brand {
+  --c-green:       #0e6b5e;
+  --c-green-dark:  #08463d;
+  --c-green-light: #14927f;
+  --c-cream:       #f5efe2;
+  --c-cream-2:     #ebe2cd;
+  --c-cream-3:     #e0d4b6;
+  --c-ink:         #1a1d24;
+  --c-ink-soft:    #3d414b;
+  --c-muted:       #5b606a;
+  --c-line:        #d8cfb9;
+  --c-brass:       #b8975c;
+  --c-rust:        #a04a2a;
+  --autumn-1:      transparent;
+  --autumn-2:      transparent;
+  --autumn-3:      transparent;
+  --autumn-ink:    transparent;
+}
+
+/* ----- AUTUMN PALETTE — currently active, subtle accent ----- */
+.theme-autumn {
+  --c-green:       #6b3a1f;       /* chestnut — calmer than auburn */
+  --c-green-dark:  #3a1f10;       /* walnut */
+  --c-green-light: #8a5a3a;       /* cinnamon */
+  --c-cream:       #f7eeda;       /* warmer cream */
+  --c-cream-2:     #ecdcbc;       /* wheat */
+  --c-cream-3:     #d8b890;       /* caramel cream */
+  --c-ink:         #2a1d10;       /* coffee */
+  --c-ink-soft:    #4a3a26;       /* espresso */
+  --c-muted:       #7a6450;       /* taupe */
+  --c-line:        #c8a878;       /* caramel */
+  --c-brass:       #b07c2e;       /* ochre */
+  --c-rust:        #8a3e1a;       /* muted rust */
+  --autumn-1:      #c87a2e;       /* ochre leaf */
+  --autumn-2:      #a85428;       /* burnt sienna */
+  --autumn-3:      #6b3a1f;       /* chestnut */
+  --autumn-ink:    #3a1f10;       /* walnut */
+}
+
 :root {
-  --c-green:       #8a2e1a;       /* auburn — replaces deep medical-green */
-  --c-green-dark:  #5e1d10;       /* burnt sienna */
-  --c-green-light: #b85434;       /* pumpkin */
-  --c-cream:       #f5ecdc;       /* warm cream */
-  --c-cream-2:     #ebdfc5;       /* wheat */
-  --c-cream-3:     #d8c39a;       /* toffee */
-  --c-ink:         #1d1812;       /* coffee */
-  --c-ink-soft:    #423827;       /* walnut */
-  --c-muted:       #6b5b46;       /* taupe */
-  --c-line:        #d2b88a;       /* caramel */
-  --c-brass:       #c08a2e;       /* ochre */
-  --c-rust:        #8a2e1a;       /* auburn accent */
   --r: 6px;
   --r-lg: 12px;
   --max: 1140px;
@@ -51,7 +86,7 @@ header.top {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  background: rgba(245, 236, 220, 0.94);
+  background: rgba(247, 238, 218, 0.94);
 }
 header.top .wrap {
   display: flex; align-items: center; justify-content: space-between;
@@ -63,7 +98,7 @@ header.top .wrap {
   width: 44px; height: 44px;
   border-radius: 10px;
   display: block;
-  box-shadow: 0 6px 16px -8px rgba(138,46,26,.40);
+  box-shadow: 0 6px 16px -8px rgba(107,58,31,.35);
 }
 
 
@@ -101,7 +136,7 @@ header.top .wrap {
   position: absolute;
   top: -120px; left: -120px;
   width: 420px; height: 420px;
-  background: radial-gradient(circle, rgba(138,46,26,.10), transparent 65%);
+  background: radial-gradient(circle, rgba(107,58,31,.08), transparent 65%);
   pointer-events: none;
 }
 .hero::after {
@@ -110,7 +145,7 @@ header.top .wrap {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 85% 20%, rgba(255,238,210,0.55), transparent 60%),
+    radial-gradient(ellipse 60% 80% at 85% 20%, rgba(255,235,200,0.55), transparent 60%),
     linear-gradient(180deg, var(--c-cream-2) 0%, #fbf5e5 60%, var(--c-cream-3) 100%);
   pointer-events: none;
   z-index: -1;
@@ -118,7 +153,7 @@ header.top .wrap {
 @media (min-width: 880px) {
   .hero::after {
     background:
-      radial-gradient(ellipse 50% 70% at 78% 25%, rgba(255,238,210,0.7), transparent 65%),
+      radial-gradient(ellipse 50% 70% at 78% 25%, rgba(255,235,200,0.7), transparent 65%),
       linear-gradient(180deg, var(--c-cream-2) 0%, #fbf5e5 60%, var(--c-cream-3) 100%);
   }
 }
@@ -211,7 +246,7 @@ header.top .wrap {
   background: linear-gradient(160deg, var(--c-cream-3), var(--c-cream-2));
   border-radius: var(--r-lg);
   overflow: hidden;
-  box-shadow: 0 30px 60px -30px rgba(94,29,16,.30), 0 1px 0 rgba(0,0,0,.03);
+  box-shadow: 0 30px 60px -30px rgba(58,31,16,.28), 0 1px 0 rgba(0,0,0,.03);
   border: 1px solid rgba(255,255,255,.6);
 }
 .portrait svg { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -253,7 +288,7 @@ header.top .wrap {
 .portrait .photo-tag {
   position: absolute;
   bottom: 14px; left: 14px;
-  background: rgba(94,29,16,.85);
+  background: rgba(58,31,16,.85);
   color: var(--c-cream);
   padding: 5px 11px;
   border-radius: 999px;
@@ -299,7 +334,7 @@ header.top .wrap {
 }
 .condition:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -16px rgba(138,46,26,.25);
+  box-shadow: 0 10px 24px -16px rgba(138,90,58,.22);
 }
 .condition h3 {
   font-family: var(--serif);
@@ -377,7 +412,7 @@ header.top .wrap {
   border-left: 3px solid var(--c-green);
   border-radius: var(--r-lg);
   padding: 20px 22px;
-  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(94,29,16,.20);
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(58,31,16,.18);
 }
 .step-num {
   display: inline-flex; align-items: center; justify-content: center;
@@ -436,13 +471,13 @@ section.about .wrap {
   border-radius: var(--r-lg);
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.6);
-  box-shadow: 0 30px 60px -30px rgba(94,29,16,.30), 0 1px 0 rgba(0,0,0,.03);
+  box-shadow: 0 30px 60px -30px rgba(58,31,16,.28), 0 1px 0 rgba(0,0,0,.03);
 }
 .about .photo svg { width: 100%; height: 100%; }
 .about .photo .photo-tag {
   position: absolute;
   bottom: 14px; left: 14px;
-  background: rgba(94,29,16,.85);
+  background: rgba(58,31,16,.85);
   color: var(--c-cream);
   padding: 5px 11px;
   border-radius: 999px;
@@ -612,7 +647,7 @@ section.process .lede {
   display: grid;
   grid-template-columns: 130px 1fr;
   gap: 0;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 12px 32px -22px rgba(94, 29, 16, 0.20);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 12px 32px -22px rgba(58, 31, 16, 0.18);
 }
 .doc-card img {
   width: 100%;
@@ -693,7 +728,7 @@ section.process .lede {
   color: var(--c-green-dark);
   letter-spacing: 0.02em;
   border: 2px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 4px 12px -6px rgba(94, 29, 16, 0.30);
+  box-shadow: 0 4px 12px -6px rgba(58, 31, 16, 0.28);
 }
 .staff-headshot {
   width: 150px;
@@ -756,7 +791,7 @@ section.process .lede {
 .lib-card:hover {
   transform: translateY(-2px);
   border-color: var(--c-green);
-  box-shadow: 0 12px 28px -18px rgba(94, 29, 16, 0.30);
+  box-shadow: 0 12px 28px -18px rgba(58, 31, 16, 0.28);
 }
 .lib-ico {
   font-size: 30px;
@@ -808,7 +843,7 @@ section.process .lede {
   padding: 28px 24px;
   border: 1px solid var(--c-line);
   display: flex; flex-direction: column; gap: 14px;
-  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(94,29,16,.20);
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(58,31,16,.18);
 }
 .review .stars {
   color: var(--c-brass);
@@ -926,13 +961,13 @@ section.connect h2 em { font-style: italic; color: var(--c-green); }
   border-radius: var(--r-lg);
   text-decoration: none;
   color: var(--c-ink);
-  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(94,29,16,.20);
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 12px 32px -22px rgba(58,31,16,.18);
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 .social-card:hover {
   transform: translateY(-1px);
   border-left-color: #145dbf;
-  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 18px 40px -22px rgba(94,29,16,.28);
+  box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 18px 40px -22px rgba(58,31,16,.26);
 }
 .social-card-icon {
   display: flex; align-items: center; justify-content: center;
@@ -1158,7 +1193,7 @@ form.book-form {
   border: 1px solid var(--c-line);
   border-radius: var(--r-lg);
   padding: 32px 30px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 12px 36px -20px rgba(94, 29, 16, 0.20);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 12px 36px -20px rgba(58, 31, 16, 0.18);
 }
 form.book-form label {
   display: block;
@@ -1647,4 +1682,209 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   .patient-faq { padding: 48px 0; }
   .hero { padding: 40px 0; }
   .hero .wrap { gap: 32px; }
+}
+
+
+
+/* ===========================================================
+   AUTUMN THEME 2026-10-06 — hero accent block
+   Limited to the homepage, layered on top of the active theme.
+   Uses inline SVG illustrations (no external image dependencies,
+   no copyrighted stock photos). Revert in March by removing
+   the <section class="autumn-hero"> block from index.html
+   and these styles.
+   =========================================================== */
+.autumn-hero {
+  background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-cream-2) 100%);
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  padding: 36px 0 32px;
+  position: relative;
+  overflow: hidden;
+}
+.autumn-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 30%, var(--autumn-1) 0 4px, transparent 5px),
+    radial-gradient(circle at 28% 70%, var(--autumn-2) 0 3px, transparent 4px),
+    radial-gradient(circle at 55% 20%, var(--autumn-3) 0 5px, transparent 6px),
+    radial-gradient(circle at 78% 60%, var(--autumn-1) 0 4px, transparent 5px),
+    radial-gradient(circle at 92% 35%, var(--autumn-2) 0 3px, transparent 4px);
+  opacity: .35;
+  pointer-events: none;
+}
+.autumn-hero .wrap {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 720px) {
+  .autumn-hero .wrap {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 36px;
+  }
+  .autumn-hero { padding: 48px 0 44px; }
+}
+.autumn-hero h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--autumn-ink);
+  margin: 6px 0 10px;
+}
+@media (min-width: 720px) { .autumn-hero h2 { font-size: 34px; } }
+.autumn-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--autumn-2);
+  margin: 0 0 4px;
+}
+.autumn-hero .eyebrow::before {
+  content: "";
+  width: 28px; height: 1px;
+  background: var(--autumn-2);
+}
+.autumn-hero p {
+  margin: 0;
+  color: var(--c-ink-soft);
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 38em;
+}
+.autumn-hero .accent-meta {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--c-muted);
+  display: flex; flex-wrap: wrap; gap: 14px;
+}
+.autumn-hero .accent-meta strong { color: var(--autumn-ink); font-weight: 600; }
+.autumn-hero svg.leaves { display: block; width: 100%; height: auto; max-width: 320px; margin-inline: auto; }
+
+
+/* ===========================================================
+   ANATOMY TOOL — our own interactive body-region map
+   Original layout, original SVG, original hotspot coordinates.
+   Not derived from any third-party diagram.
+   Reuses the active theme's palette.
+   =========================================================== */
+.anatomy-page { padding: 48px 0 80px; }
+.anatomy-page .wrap { display: grid; gap: 36px; }
+@media (min-width: 880px) {
+  .anatomy-page .wrap { grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+}
+.anatomy-page h1 {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--c-ink);
+  margin: 8px 0 14px;
+}
+.anatomy-page .lede {
+  color: var(--c-ink-soft);
+  font-size: 16px;
+  max-width: 36em;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+.anatomy-canvas {
+  position: relative;
+  background: var(--c-cream-2);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  padding: 18px;
+}
+.anatomy-svg { display: block; width: 100%; height: auto; }
+.anatomy-silhouette { fill: var(--c-cream-3); stroke: var(--c-muted); stroke-width: 1; }
+.anatomy-region {
+  fill: var(--c-green-light);
+  stroke: var(--c-green);
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: fill .15s ease, transform .15s ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.anatomy-region:hover,
+.anatomy-region:focus-visible { fill: var(--autumn-2); outline: none; }
+.anatomy-region[aria-pressed="true"] { fill: var(--autumn-3); }
+.anatomy-label {
+  font: 600 12px/1 var(--sans);
+  fill: var(--c-ink);
+  pointer-events: none;
+  text-anchor: middle;
+}
+.anatomy-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--c-muted);
+}
+.anatomy-legend strong { color: var(--c-ink); font-weight: 600; }
+.anatomy-cta {
+  background: var(--c-cream-2);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+  align-items: start;
+}
+@media (min-width: 720px) { .anatomy-cta { padding: 28px; } }
+.anatomy-cta h2 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--c-ink);
+  margin: 0;
+}
+.anatomy-cta p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--c-ink-soft);
+  line-height: 1.55;
+}
+.anatomy-cta .links { display: grid; gap: 8px; margin-top: 6px; }
+.anatomy-cta .links a {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r);
+  text-decoration: none;
+  color: var(--c-green-dark);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .12s ease, border-color .12s ease;
+}
+.anatomy-cta .links a:hover,
+.anatomy-cta .links a:focus-visible {
+  background: var(--c-cream-3);
+  border-color: var(--c-green);
+  outline: none;
+}
+.anatomy-cta .links a[aria-disabled="true"] {
+  opacity: .55; cursor: not-allowed; pointer-events: none;
+}
+.anatomy-cta .links a .arrow { color: var(--c-muted); font-size: 16px; }
+.anatomy-empty {
+  font-size: 13px;
+  color: var(--c-muted);
+  font-style: italic;
+  margin: 4px 0 0;
 }
