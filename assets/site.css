@@ -1932,6 +1932,7 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   display: inline-block;
 }
 .has-dropdown.is-open .caret { transform: rotate(180deg); }
+.has-dropdown.is-open > .dropdown { display: block; }
 
 .has-dropdown > .dropdown {
   position: absolute;
@@ -1979,6 +1980,8 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   .has-dropdown:hover > .dropdown,
   .has-dropdown:focus-within > .dropdown,
   .has-dropdown.is-open > .dropdown { display: block; }
+  .has-dropdown:hover > .topnav-trigger .caret,
+  .has-dropdown.is-open > .topnav-trigger .caret { transform: rotate(180deg); }
 }
 /* On narrow screens, the hover rule above is gated by a JS flag,
    so mobile users see only the 4-tab sticky bar. The dropdowns
