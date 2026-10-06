@@ -48,10 +48,12 @@
 (() => {
   const triggers = document.querySelectorAll('.has-dropdown');
   if (!triggers.length) return;
-  const closeAll = (except) => {
+  const closeAll = () => {
     for (const wrap of triggers) {
-      if (wrap === except) continue;
       wrap.classList.remove('is-open');
+      // Force-hide any hover-opened dropdown by clearing inline style
+      const menu = wrap.querySelector('.dropdown');
+      if (menu) menu.style.display = 'none';
       const trigger = wrap.querySelector('.topnav-trigger');
       if (trigger) trigger.setAttribute('aria-expanded', 'false');
     }
@@ -70,22 +72,28 @@
     // Click toggles (works for both desktop click and mobile tap)
     trigger.addEventListener('click', (e) => {
       const isOpen = wrap.classList.contains('is-open');
-      if (isOpen) return; // let the browser follow the link
+      if (isOpen) {
+        // Second click: let the browser follow the link, but close first
+        closeAll();
+        return;
+      }
       e.preventDefault();
-      closeAll(wrap);
+      closeAll();
       wrap.classList.add('is-open');
       trigger.setAttribute('aria-expanded', 'true');
     });
   }
-  // Esc closes any open dropdown
+  // Esc closes any open dropdown (including hover-opened)
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeAll(null);
+    if (e.key === 'Escape') closeAll();
   });
   // Click outside closes
   document.addEventListener('click', (e) => {
     for (const wrap of triggers) {
       if (!wrap.contains(e.target)) {
         wrap.classList.remove('is-open');
+        const menu = wrap.querySelector('.dropdown');
+        if (menu) menu.style.display = '';
         const t = wrap.querySelector('.topnav-trigger');
         if (t) t.setAttribute('aria-expanded', 'false');
       }
