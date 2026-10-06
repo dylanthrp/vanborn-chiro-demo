@@ -1888,3 +1888,101 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   font-style: italic;
   margin: 4px 0 0;
 }
+
+
+
+/* ===========================================================
+   TOP-NAV DROPPDOWNS — hover (desktop) and tap (any).
+   Mobile keeps the 4-tab sticky bar simple — the dropdown
+   sub-items live inside the trigger link, so the section page
+   is always reachable without the menu.
+   =========================================================== */
+.has-dropdown { position: relative; display: inline-flex; align-items: center; }
+.has-dropdown .topnav-trigger {
+  /* Inherit the parent topnav's link styling so the trigger reads as a
+     normal nav item against the dark topnav background. */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  margin: 0 2px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: .01em;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .12s ease, color .12s ease;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+}
+.has-dropdown .topnav-trigger:hover,
+.has-dropdown .topnav-trigger:focus-visible {
+  background: rgba(255,255,255,.10);
+  color: #fff;
+  outline: none;
+}
+.has-dropdown .caret {
+  font-size: 10px;
+  line-height: 1;
+  margin-top: 1px;
+  transition: transform .15s ease;
+  display: inline-block;
+}
+.has-dropdown.is-open .caret { transform: rotate(180deg); }
+
+.has-dropdown > .dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r);
+  box-shadow: 0 12px 28px -16px rgba(58, 31, 16, .35);
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  z-index: 60;
+  display: none; /* hidden by default — opened via .is-open class or :hover */
+}
+.has-dropdown > .dropdown li { margin: 0; padding: 0; }
+.has-dropdown > .dropdown a {
+  display: block;
+  padding: 10px 18px;
+  color: var(--c-ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background .12s ease, color .12s ease;
+}
+.has-dropdown > .dropdown a:hover,
+.has-dropdown > .dropdown a:focus-visible {
+  background: var(--c-cream-2);
+  color: var(--c-green-dark);
+  outline: none;
+}
+/* Subtle "current section" hint if the trigger URL matches the page */
+.has-dropdown > .topnav-trigger[aria-current="page"] {
+  background: rgba(58, 31, 16, .08);
+  border-radius: 999px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* On wide screens, hover opens the dropdown. On narrow screens,
+   the dropdowns are full-width below the trigger. */
+@media (min-width: 720px) {
+  .has-dropdown:hover > .dropdown,
+  .has-dropdown:focus-within > .dropdown,
+  .has-dropdown.is-open > .dropdown { display: block; }
+}
+/* On narrow screens, the hover rule above is gated by a JS flag,
+   so mobile users see only the 4-tab sticky bar. The dropdowns
+   are still there in the DOM for accessibility but visually hidden. */
+@media (max-width: 719px) {
+  .has-dropdown > .dropdown { display: none !important; }
+}

@@ -40,3 +40,55 @@
   filter();
   panel.hidden = false;
 })();
+
+// Top-nav dropdowns: hover (desktop), tap (any), Esc to close.
+// No-JS fallback: the dropdown <ul> is `display: none` by default in
+// CSS and the trigger remains a real link, so the section page is
+// always reachable. Sub-items are reachable through the section page.
+(() => {
+  const triggers = document.querySelectorAll('.has-dropdown');
+  if (!triggers.length) return;
+  const closeAll = (except) => {
+    for (const wrap of triggers) {
+      if (wrap === except) continue;
+      wrap.classList.remove('is-open');
+      const trigger = wrap.querySelector('.topnav-trigger');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    }
+  };
+  for (const wrap of triggers) {
+    const trigger = wrap.querySelector('.topnav-trigger');
+    if (!trigger) continue;
+    // Mark current section based on URL match
+    try {
+      const here = location.pathname.split('/').pop() || 'index.html';
+      if (trigger.getAttribute('href') === here) {
+        trigger.setAttribute('aria-current', 'page');
+      }
+    } catch {}
+    trigger.setAttribute('aria-expanded', 'false');
+    // Click toggles (works for both desktop click and mobile tap)
+    trigger.addEventListener('click', (e) => {
+      const isOpen = wrap.classList.contains('is-open');
+      if (isOpen) return; // let the browser follow the link
+      e.preventDefault();
+      closeAll(wrap);
+      wrap.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    });
+  }
+  // Esc closes any open dropdown
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll(null);
+  });
+  // Click outside closes
+  document.addEventListener('click', (e) => {
+    for (const wrap of triggers) {
+      if (!wrap.contains(e.target)) {
+        wrap.classList.remove('is-open');
+        const t = wrap.querySelector('.topnav-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+})();

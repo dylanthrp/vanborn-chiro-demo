@@ -60,9 +60,34 @@
 <nav class="topnav" aria-label="Sections">
     <div class="wrap">
       <a href="index.html#top" data-nav="home">Home</a>
-      <a href="meet-the-doctors.html" data-nav="about">About Us</a>
-      <a href="library-back.html" data-nav="library">Wellness Library</a>
-      <a href="patient-resources.html" data-nav="patients">Patients</a>
+      <div class="has-dropdown" data-nav="about">
+        <a href="meet-the-doctors.html" class="topnav-trigger" aria-haspopup="true" aria-expanded="false">About Us <span class="caret" aria-hidden="true">▾</span></a>
+        <ul class="dropdown" role="menu">
+          <li role="none"><a role="menuitem" href="meet-the-doctors.html">Meet the Doctors</a></li>
+          <li role="none"><a role="menuitem" href="patient-stories.html">Patient Stories</a></li>
+        </ul>
+      </div>
+      <div class="has-dropdown" data-nav="library">
+        <a href="anatomy.html" class="topnav-trigger" aria-haspopup="true" aria-expanded="false">Wellness Library <span class="caret" aria-hidden="true">▾</span></a>
+        <ul class="dropdown" role="menu">
+          <li role="none"><a role="menuitem" href="anatomy.html">Body region guide</a></li>
+          <li role="none"><a role="menuitem" href="library-back.html">Back</a></li>
+          <li role="none"><a role="menuitem" href="library-neck.html">Neck</a></li>
+          <li role="none"><a role="menuitem" href="library-sciatica.html">Sciatica</a></li>
+          <li role="none"><a role="menuitem" href="library-carpal.html">Carpal tunnel</a></li>
+          <li role="none"><a role="menuitem" href="library-joints.html">Joints</a></li>
+          <li role="none"><a role="menuitem" href="library-foot.html">Feet</a></li>
+          <li role="none"><a role="menuitem" href="pediatric.html">Pediatric</a></li>
+          <li role="none"><a role="menuitem" href="sports-performance.html">Sports &amp; performance</a></li>
+        </ul>
+      </div>
+      <div class="has-dropdown" data-nav="patients">
+        <a href="patient-resources.html" class="topnav-trigger" aria-haspopup="true" aria-expanded="false">Patients <span class="caret" aria-hidden="true">▾</span></a>
+        <ul class="dropdown" role="menu">
+          <li role="none"><a role="menuitem" href="patient-resources.html">Patient resources</a></li>
+          <li role="none"><a role="menuitem" href="https://vanbornchiropractic.com/uploads/new-patient-forms-2023.pdf" target="_blank" rel="noopener">New patient forms (PDF)</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
