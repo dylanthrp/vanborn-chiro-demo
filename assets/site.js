@@ -51,9 +51,10 @@
   const closeAll = () => {
     for (const wrap of triggers) {
       wrap.classList.remove('is-open');
-      // Force-hide any hover-opened dropdown by clearing inline style
+      // Force-hide any hover-opened dropdown. !important is needed because
+      // :hover CSS can keep the dropdown open after the JS tries to close it.
       const menu = wrap.querySelector('.dropdown');
-      if (menu) menu.style.display = 'none';
+      if (menu) menu.style.setProperty('display', 'none', 'important');
       const trigger = wrap.querySelector('.topnav-trigger');
       if (trigger) trigger.setAttribute('aria-expanded', 'false');
     }
@@ -79,6 +80,10 @@
       }
       e.preventDefault();
       closeAll();
+      // Clear the !important inline display on this specific menu so the
+      // CSS .is-open > .dropdown { display: block; } rule can take over.
+      const menu = wrap.querySelector('.dropdown');
+      if (menu) menu.style.removeProperty('display');
       wrap.classList.add('is-open');
       trigger.setAttribute('aria-expanded', 'true');
     });
