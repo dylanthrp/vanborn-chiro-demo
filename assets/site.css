@@ -1910,7 +1910,9 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   font-weight: 600;
   font-size: 13.5px;
   letter-spacing: .01em;
-  color: inherit;
+  /* Light text on the dark chestnut topnav — without this, the trigger
+     inherits a dark color from a downstream rule and becomes invisible. */
+  color: rgba(255, 255, 255, .82);
   text-decoration: none;
   border: 1px solid transparent;
   transition: background .12s ease, color .12s ease;
