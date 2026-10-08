@@ -34,22 +34,29 @@
 
 /* ----- AUTUMN PALETTE — currently active, subtle accent ----- */
 .theme-autumn {
-  --c-green:       #6b3a1f;       /* chestnut — calmer than auburn */
-  --c-green-dark:  #3a1f10;       /* walnut */
-  --c-green-light: #8a5a3a;       /* cinnamon */
-  --c-cream:       #f7eeda;       /* warmer cream */
-  --c-cream-2:     #ecdcbc;       /* wheat */
-  --c-cream-3:     #d8b890;       /* caramel cream */
-  --c-ink:         #2a1d10;       /* coffee */
-  --c-ink-soft:    #4a3a26;       /* espresso */
-  --c-muted:       #7a6450;       /* taupe */
-  --c-line:        #c8a878;       /* caramel */
-  --c-brass:       #b07c2e;       /* ochre */
-  --c-rust:        #8a3e1a;       /* muted rust */
-  --autumn-1:      #c87a2e;       /* ochre leaf */
-  --autumn-2:      #a85428;       /* burnt sienna */
-  --autumn-3:      #6b3a1f;       /* chestnut */
-  --autumn-ink:    #3a1f10;       /* walnut */
+  /* Primary palette: autumn-foliage 5 swatches */
+  --c-green:       #89902F;       /* olive green (CTAs, accents) */
+  --c-green-dark:  #5e6520;       /* darker olive (hover/pressed) */
+  --c-green-light: #a3aa45;       /* lighter olive (subtle accents) */
+  --c-yellow:      #FCB829;       /* warm yellow (highlights) */
+  --c-orange:      #FE7126;       /* burnt orange (accent) */
+  --c-red:         #F04032;       /* brick red (emphasis only) */
+  --c-brown:       #875D4A;       /* warm brown (secondary text, dividers) */
+  /* Parchment neutrals: soft on the eyes for older viewers */
+  --c-cream:       #FAF3E2;       /* parchment — warm cream paper */
+  --c-cream-2:     #F1E7CE;       /* wheat — slightly deeper */
+  --c-cream-3:     #E5D5B0;       /* linen — card / divider */
+  --c-ink:         #2A2419;       /* deep walnut — text, softer than black */
+  --c-ink-soft:    #5A4F3D;       /* walnut — secondary text */
+  --c-muted:       #847663;       /* taupe — meta text */
+  --c-line:        #D9C9A5;       /* divider line */
+  --c-brass:       #B89360;       /* brass / ochre (legacy token) */
+  --c-rust:        #B85A2E;       /* rust accent (legacy token) */
+  /* Accent token aliases — keep names so existing CSS still works */
+  --autumn-1:      #FCB829;       /* yellow */
+  --autumn-2:      #FE7126;       /* orange */
+  --autumn-3:      #89902F;       /* olive */
+  --autumn-ink:    #2A2419;       /* walnut */
 }
 
 :root {
@@ -68,8 +75,10 @@ body {
   color: var(--c-ink);
   line-height: 1.6;
   font-size: 17px;
-  /* subtle paper grain */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.14 0 0 0 0 0.10 0 0 0 0.04 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+  /* Soft parchment texture: cream base + barely-there warm noise for
+     "old paper" feel without the busy grain. Soft on the eyes. */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.53 0 0 0 0 0.36 0 0 0 0 0.29 0 0 0 0 0.035 0'/></filter><rect width='320' height='320' filter='url(%23p)'/></svg>");
+  background-attachment: fixed;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--c-green-dark); }
@@ -86,7 +95,7 @@ header.top {
   position: sticky; top: 0; z-index: 50;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  background: rgba(247, 238, 218, 0.94);
+  background: rgba(250, 243, 226, 0.94);
 }
 header.top .wrap {
   display: flex; align-items: center; justify-content: space-between;
