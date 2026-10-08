@@ -1384,64 +1384,54 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
 @media (max-width: 539px) {
   header.top { position: static; }
   nav.topnav { position: sticky; top: 0; z-index: 40; }
+  /* On narrow screens, keep the header in a single row: brand on the left,
+     three action buttons in one row on the right. No stacking, no grid. */
   header.top .wrap {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 14px 16px 12px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 14px;
   }
-  /* Logo row: center brand block, breathe more on the spine mark */
   .brand {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    gap: 12px;
-    padding: 4px 0 6px;
+    flex: 0 0 auto;
+    gap: 8px;
   }
   .brand img {
-    width: 56px;
-    height: 56px;
+    width: 40px;
+    height: 40px;
   }
-  .brand .name { font-size: 19px; line-height: 1.1; }
-    .brand .name small { font-size: 10.5px; letter-spacing: .12em; }
-  /* Action rows: one full-width primary, then a 1/2 + 1/2 secondary grid */
+  .brand .name { font-size: 15px; line-height: 1.05; }
+  .brand .name small { font-size: 9.5px; letter-spacing: .12em; }
+  /* All three buttons in a single row, equal width, no stacking */
   .header-icons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    width: 100%;
-    margin-top: 2px;
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
   }
-  /* Make the FIRST .hi (Call) span both columns at the top */
-  .header-icons .hi:first-child {
-    grid-column: 1 / -1;
+  .header-icons .hi {
+    flex: 1 1 0;
+    min-width: 0;
     justify-content: center;
-    padding: 14px 12px;
-    font-size: 15px;
+    padding: 9px 4px;
+    font-size: 11.5px;
+    gap: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .header-icons .hi span:not(.num) { display: none; }
+  .header-icons .hi svg { width: 14px; height: 14px; }
+  .header-icons .hi:first-child {
     background: var(--c-green);
     color: #fff;
     border-color: transparent;
   }
   .header-icons .hi:first-child:hover {
     background: var(--c-green-dark);
-  }
-  .header-icons .hi:first-child svg { width: 18px; height: 18px; }
-  /* The other two (Appt, Map) sit on the second row, cream pills */
-  .header-icons .hi {
-    justify-content: center;
-    padding: 12px 8px;
-    font-size: 13px;
-  }
-  .header-icons .hi svg { width: 16px; height: 16px; }
-  .header-icons .hi span { display: inline; }
-  /* Subtle top divider between logo row and action row */
-  .header-icons::before {
-    content: "";
-    grid-column: 1 / -1;
-    height: 1px;
-    background: var(--c-line);
-    opacity: .7;
-    margin: 4px 0 0;
   }
   /* Section-nav pills below header: smaller, single horizontal scroll, less visual weight */
   .topnav .wrap {
@@ -1461,7 +1451,7 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
     white-space: nowrap;
   }
   .topnav .demo-pill {
-    margin-right: auto; /* keep DEMO on the left while tabs scroll */
+    margin-right: auto;
     font-size: 11px;
     padding: 4px 8px;
   }
