@@ -1695,38 +1695,29 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
    and these styles.
    =========================================================== */
 .autumn-hero {
-  background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-cream-2) 100%);
+  background: var(--c-cream);
   border-top: 1px solid var(--c-line);
   border-bottom: 1px solid var(--c-line);
-  padding: 36px 0 32px;
+  padding: 0;
   position: relative;
   overflow: hidden;
 }
-.autumn-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 12% 30%, var(--autumn-1) 0 4px, transparent 5px),
-    radial-gradient(circle at 28% 70%, var(--autumn-2) 0 3px, transparent 4px),
-    radial-gradient(circle at 55% 20%, var(--autumn-3) 0 5px, transparent 6px),
-    radial-gradient(circle at 78% 60%, var(--autumn-1) 0 4px, transparent 5px),
-    radial-gradient(circle at 92% 35%, var(--autumn-2) 0 3px, transparent 4px);
-  opacity: .35;
-  pointer-events: none;
-}
-.autumn-hero .wrap {
-  display: grid;
-  gap: 24px;
-  align-items: center;
-  position: relative;
+/* Full-bleed header photograph (Pexels Free License) */
+.autumn-hero .autumn-photo {
+  width: 100%;
+  height: 220px;
+  background-image: url('autumn-leaves-pexels.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
 }
 @media (min-width: 720px) {
-  .autumn-hero .wrap {
-    grid-template-columns: 1.4fr 1fr;
-    gap: 36px;
-  }
-  .autumn-hero { padding: 48px 0 44px; }
+  .autumn-hero .autumn-photo { height: 320px; }
+}
+.autumn-hero .autumn-content {
+  padding: 32px 22px 36px;
+  max-width: var(--max);
+  margin: 0 auto;
 }
 .autumn-hero h2 {
   font-family: var(--serif);
@@ -1734,7 +1725,7 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: var(--autumn-ink);
+  color: var(--c-ink);
   margin: 6px 0 10px;
 }
 @media (min-width: 720px) { .autumn-hero h2 { font-size: 34px; } }
@@ -1767,8 +1758,13 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   color: var(--c-muted);
   display: flex; flex-wrap: wrap; gap: 14px;
 }
-.autumn-hero .accent-meta strong { color: var(--autumn-ink); font-weight: 600; }
-.autumn-hero svg.leaves { display: block; width: 100%; height: auto; max-width: 320px; margin-inline: auto; }
+.autumn-hero .accent-meta strong { color: var(--c-ink); font-weight: 600; }
+.autumn-hero .autumn-credit {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--c-muted);
+}
+.autumn-hero .autumn-credit a { color: var(--c-green-dark); text-decoration: underline; }
 
 
 /* ===========================================================
