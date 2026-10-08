@@ -609,9 +609,20 @@ section.process .lede {
 .topnav .wrap {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
+  min-width: 0;
+  /* Allow horizontal scroll on narrow screens so the 4 items never
+     overlap. The triggers have flex: 0 0 auto + white-space: nowrap
+     so they sit at their natural width. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 12px;
 }
+.topnav .wrap::-webkit-scrollbar { display: none; }
 .tn-tab {
   flex: 1;
   min-width: 120px;
@@ -1423,7 +1434,8 @@ footer .small { grid-column: 1 / -1; color: rgba(255,255,255,.8); }
     white-space: nowrap;
     overflow: hidden;
   }
-  .header-icons .hi span:not(.num) { display: none; }
+  /* Hide the long phone number on narrow screens; keep the short label. */
+  .header-icons .hi span.num { display: none; }
   .header-icons .hi svg { width: 14px; height: 14px; }
   .header-icons .hi:first-child {
     background: var(--c-green);
@@ -1905,8 +1917,6 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   font-weight: 600;
   font-size: 13.5px;
   letter-spacing: .01em;
-  /* Light text on the dark chestnut topnav — without this, the trigger
-     inherits a dark color from a downstream rule and becomes invisible. */
   color: rgba(255, 255, 255, .82);
   text-decoration: none;
   border: 1px solid transparent;
@@ -1914,6 +1924,8 @@ footer .small a { text-decoration: underline; text-underline-offset: 3px; }
   cursor: pointer;
   background: transparent;
   font-family: inherit;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 .has-dropdown .topnav-trigger:hover,
 .has-dropdown .topnav-trigger:focus-visible {
